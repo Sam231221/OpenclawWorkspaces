@@ -1,0 +1,1636 @@
+{
+  "version": 55,
+  "daily": {
+    "2026-07-23": {
+      "run_id": "run_youtube_linkedin_20260723_0001",
+      "last_run_at": "2026-07-23T00:01:00Z",
+      "candidates_scanned": 5,
+      "full_packets_created": 1,
+      "packet_cap": 5,
+      "held_insufficient_source_context": 4,
+      "skipped_low_durable_value": 1,
+      "telegram_delivery_status": "final_plain_text_delivery",
+      "model_routing": {
+        "drafting": "openai/gpt-5.5 medium requested by cron; not invoked because transcript gate blocked all drafts",
+        "classification": "local deterministic relevance pass; no model escalation needed",
+        "one_shot_434cG4g5KLE": "openai/gpt-5.5 medium requested by cron; active Codex runtime is OpenAI but did not expose a separate model switch in-turn; no non-OpenAI model used."
+      },
+      "last_one_shot_at": "2026-07-23T10:50:00Z",
+      "one_shot_packets_created": 1,
+      "transcript_recovered_packets": [
+        "pkt_434cG4g5KLE_v1"
+      ]
+    }
+  },
+  "runs": [
+    {
+      "run_id": "run_youtube_linkedin_20260723_0001",
+      "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+      "started_at": "2026-07-23T00:01:00Z",
+      "completed_at": "2026-07-23T00:01:00Z",
+      "sources_checked": [
+        "Theo / t3.gg",
+        "ThePrimeTime",
+        "Fireship"
+      ],
+      "candidate_count": 5,
+      "selected_packet_count": 0,
+      "full_packet_cap": 5,
+      "outcomes": {
+        "created_packets": [],
+        "held_insufficient_source_context": [
+          "9y8_QYiC9AM",
+          "434cG4g5KLE",
+          "0F5zG1RQ4Ig",
+          "YP73B9D20V4"
+        ],
+        "skipped_low_durable_value": [
+          "XgpMXGvRf24"
+        ]
+      },
+      "transcript_capture": {
+        "helper": "npm run youtube:transcript -- <youtube-url-or-id>",
+        "working_directory": "/home/sam/.openclaw/workspace",
+        "cookies_file_checked": "/home/sam/.config/yt-dlp/cookies.txt",
+        "cookies_file_available": false,
+        "failures": [
+          "9y8_QYiC9AM",
+          "434cG4g5KLE",
+          "0F5zG1RQ4Ig",
+          "YP73B9D20V4"
+        ],
+        "failure_summary": "Helper returned transcript_status=failed with no subtitles found for each attempted candidate."
+      },
+      "source_policy": {
+        "approval_ready_content_requires_transcript": true,
+        "title_or_description_only_drafting_used": false,
+        "supporting_sources_used_as_replacement": false
+      },
+      "media_delivery": {
+        "required_for_new_packets": true,
+        "attempted": false,
+        "reason": "No review packets were created, so no thumbnail/primary image delivery was required."
+      },
+      "telegram_delivery_status": "final_plain_text_delivery",
+      "run_metadata": {
+        "reference_utc": "2026-07-23 00:01 UTC",
+        "schedule": "0 0 * * * UTC with 300000 ms stagger",
+        "openai_only": true,
+        "model_fallback_recorded": null
+      }
+    },
+    {
+      "run_id": "run_youtube_linkedin_20260723_1050_434cG4g5KLE",
+      "cron_job_id": "b5731237-84a4-4e87-9640-1b0dfd24a62f",
+      "parent_workflow_cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+      "job_name": "one-shot-linkedinengine-transcript-packet-434cG4g5KLE",
+      "started_at": "2026-07-23T10:50:00Z",
+      "completed_at": "2026-07-23T10:50:00Z",
+      "sources_checked": [
+        "Theo / t3.gg"
+      ],
+      "candidate_count": 1,
+      "selected_packet_count": 1,
+      "outcomes": {
+        "created_packets": [
+          "pkt_434cG4g5KLE_v1"
+        ],
+        "recovered_from_previous_insufficient_source_context": [
+          "434cG4g5KLE"
+        ],
+        "held_insufficient_source_context": [],
+        "skipped_low_durable_value": []
+      },
+      "transcript_capture": {
+        "helper": "npm run youtube:transcript -- <youtube-url-or-id>",
+        "helper_script": "/home/sam/.openclaw/workspace/scripts/fetch_youtube_transcript.mjs",
+        "validation_artifact": "/home/sam/.openclaw/workspace/artifacts/youtube-transcripts/434cG4g5KLE.validation.json",
+        "transcript_artifact": "/tmp/youtube-transcript-434cG4g5KLE-clean.json",
+        "transcript_status": "available",
+        "transcript_char_count": 26729,
+        "word_count": 5028,
+        "paragraph_count": 77,
+        "subtitle_mode": "auto",
+        "subtitle_language": "en",
+        "egress_method": "tailscale-exit-node",
+        "tailscale_exit_node": "100.98.238.65",
+        "usable_for_linkedin_generation": true,
+        "no_vtt_timestamp_markup": true,
+        "no_ytdlp_log_prefix": true
+      },
+      "source_policy": {
+        "approval_ready_content_requires_transcript": true,
+        "title_or_description_only_drafting_used": false,
+        "supporting_sources_used_as_replacement": false,
+        "youtube_frames_or_thumbnails_used": false
+      },
+      "media_delivery": {
+        "required_for_new_packets": true,
+        "attempted": true,
+        "created_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+        "mime_type": "image/png",
+        "status": "asset_created_not_delivered_to_telegram_in_one_shot_final_reply",
+        "delivery_gap": "No Telegram/media send tool was invoked in this cron turn; final plain-text reply will be delivered automatically."
+      },
+      "model_routing": {
+        "requested": "openai/gpt-5.5",
+        "requested_reasoning": "medium",
+        "actual": "active OpenAI Codex runtime for this isolated turn",
+        "fallback": null,
+        "note": "No non-OpenAI model used; this runtime did not expose an in-turn model selection API."
+      }
+    }
+  ],
+  "seen": [
+    {
+      "video_id": "9y8_QYiC9AM",
+      "title": "We've been cooking",
+      "channel": "Theo / t3.gg",
+      "url": "https://www.youtube.com/watch?v=9y8_QYiC9AM",
+      "published_at": "2026-07-22T21:05:58Z",
+      "first_seen_at": "2026-07-23T00:01:00Z",
+      "last_checked_at": "2026-07-23T00:01:00Z",
+      "latest_run_id": "run_youtube_linkedin_20260723_0001",
+      "disposition": "held_insufficient_source_context",
+      "relevance_note": "Potentially relevant channel update, but title/description were too vague and no usable transcript was available.",
+      "transcript_status": "failed",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "npm run youtube:transcript -- <video_id>",
+      "transcript_char_count": 0,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=9y8_QYiC9AM"
+      ],
+      "source_basis_note": "Drafting blocked because the canonical youtube-transcript-generator helper found no usable subtitles/captions. Title/description/feed metadata were not used as a substitute.",
+      "source_confidence": "insufficient",
+      "insufficient_source_context_reason": "No usable captions/transcript after canonical local helper attempt."
+    },
+    {
+      "video_id": "434cG4g5KLE",
+      "title": "You need to read less code (hear me out)",
+      "channel": "Theo / t3.gg",
+      "url": "https://www.youtube.com/watch?v=434cG4g5KLE",
+      "published_at": "2026-07-22T13:32:25Z",
+      "first_seen_at": "2026-07-23T00:01:00Z",
+      "last_checked_at": "2026-07-23T10:50:00Z",
+      "latest_run_id": "run_youtube_linkedin_20260723_1050_434cG4g5KLE",
+      "disposition": "packet_created_in_review",
+      "relevance_note": "Relevant AI/software engineering topic, but no usable transcript was available.",
+      "transcript_status": "available",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "npm run youtube:transcript -- 434cG4g5KLE via Tailscale exit node 100.98.238.65",
+      "transcript_char_count": 26729,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=434cG4g5KLE"
+      ],
+      "source_basis_note": "Draft and visual are based on the validated clean YouTube captions/transcript artifact only; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+      "source_confidence": "sufficient",
+      "insufficient_source_context_reason": null,
+      "previous_disposition_history": [
+        {
+          "disposition": "held_insufficient_source_context",
+          "latest_run_id": "run_youtube_linkedin_20260723_0001",
+          "transcript_status": "failed",
+          "source_confidence": "insufficient",
+          "recorded_at": "2026-07-23T00:01:00Z",
+          "reason": "No usable captions/transcript after canonical local helper attempt."
+        }
+      ],
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "best_variant_id": "434cG4g5KLE_builder_insight_v1"
+    },
+    {
+      "video_id": "0F5zG1RQ4Ig",
+      "title": "You won't fall behind",
+      "channel": "ThePrimeTime",
+      "url": "https://www.youtube.com/watch?v=0F5zG1RQ4Ig",
+      "published_at": "2026-07-21T19:16:16Z",
+      "first_seen_at": "2026-07-23T00:01:00Z",
+      "last_checked_at": "2026-07-23T00:01:00Z",
+      "latest_run_id": "run_youtube_linkedin_20260723_0001",
+      "disposition": "held_insufficient_source_context",
+      "relevance_note": "Relevant AI/programmer health topic from the latest feed window, but no usable transcript was available.",
+      "transcript_status": "failed",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "npm run youtube:transcript -- <video_id>",
+      "transcript_char_count": 0,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=0F5zG1RQ4Ig"
+      ],
+      "source_basis_note": "Drafting blocked because the canonical youtube-transcript-generator helper found no usable subtitles/captions. Title/description/feed metadata were not used as a substitute.",
+      "source_confidence": "insufficient",
+      "insufficient_source_context_reason": "No usable captions/transcript after canonical local helper attempt."
+    },
+    {
+      "video_id": "YP73B9D20V4",
+      "title": "Open-weight AI just hit 2.8 trillion parameters...",
+      "channel": "Fireship",
+      "url": "https://www.youtube.com/watch?v=YP73B9D20V4",
+      "published_at": "2026-07-22T17:43:52Z",
+      "first_seen_at": "2026-07-23T00:01:00Z",
+      "last_checked_at": "2026-07-23T00:01:00Z",
+      "latest_run_id": "run_youtube_linkedin_20260723_0001",
+      "disposition": "held_insufficient_source_context",
+      "relevance_note": "Relevant AI/model-release topic, but no usable transcript was available.",
+      "transcript_status": "failed",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "npm run youtube:transcript -- <video_id>",
+      "transcript_char_count": 0,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=YP73B9D20V4"
+      ],
+      "source_basis_note": "Drafting blocked because the canonical youtube-transcript-generator helper found no usable subtitles/captions. Title/description/feed metadata were not used as a substitute.",
+      "source_confidence": "insufficient",
+      "insufficient_source_context_reason": "No usable captions/transcript after canonical local helper attempt."
+    },
+    {
+      "video_id": "XgpMXGvRf24",
+      "title": "CSS isn't a programming language",
+      "channel": "ThePrimeTime",
+      "url": "https://www.youtube.com/shorts/XgpMXGvRf24",
+      "published_at": "2026-07-22T13:02:09Z",
+      "first_seen_at": "2026-07-23T00:01:00Z",
+      "last_checked_at": "2026-07-23T00:01:00Z",
+      "latest_run_id": "run_youtube_linkedin_20260723_0001",
+      "disposition": "skipped_low_durable_value",
+      "relevance_note": "Short-form programming joke/opinion; not enough durable LinkedIn substance for a full packet.",
+      "transcript_status": "not_attempted",
+      "transcript_fallback_attempted": false,
+      "transcript_fallback_method": null,
+      "transcript_char_count": 0,
+      "source_urls": [
+        "https://www.youtube.com/shorts/XgpMXGvRf24"
+      ],
+      "source_basis_note": "Skipped at relevance gate before transcript capture.",
+      "source_confidence": "limited",
+      "insufficient_source_context_reason": "Low durable LinkedIn value; transcript not required after relevance skip."
+    }
+  ],
+  "phase2_runtime": {
+    "enabled": true,
+    "enabled_at": "2026-07-14T11:38:59Z",
+    "proposal_id": "youtube-linkedin-telegram-draft-workflow-20260713-fa7e142fbb",
+    "proposal_version": "v7",
+    "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+    "channels": [
+      "Theo / t3.gg",
+      "ThePrimeTime",
+      "Fireship"
+    ],
+    "topic_focus": [
+      "data science",
+      "software engineering",
+      "AI",
+      "tech"
+    ],
+    "max_draft_packets_per_day": 5,
+    "max_variants_per_packet": 3,
+    "variant_types": [
+      "builder_insight",
+      "hiring_signal",
+      "contrarian_take"
+    ],
+    "scores": [
+      "hook_score",
+      "usefulness_score",
+      "risk_score"
+    ],
+    "publishing_enabled": false,
+    "scheduling_enabled": false,
+    "images_enabled": false,
+    "carousels_enabled": false,
+    "models": {
+      "gating_and_scoring": "openai/gpt-5.4-nano when available; otherwise cheapest capable OpenAI model",
+      "drafting_and_revisions": "openai/gpt-5.5 with medium reasoning",
+      "visual_planning_and_publish_preflight": "openai/gpt-5.5 with medium reasoning",
+      "fallback": "if openai/gpt-5.5 is unavailable, use the nearest available stronger OpenAI fallback and record it in run metadata"
+    },
+    "telegram_delivery": {
+      "channel": "telegram",
+      "to": "8692887396",
+      "method": "openclaw_announce_delivery"
+    },
+    "state_contract": [
+      "video_id",
+      "packet_id",
+      "variant_id",
+      "variant_version",
+      "recommendation",
+      "best_variant_id",
+      "hook_score",
+      "usefulness_score",
+      "risk_score",
+      "telegram_delivery_status",
+      "review_status",
+      "revision_parent_variant_id"
+    ],
+    "legacy_schedule": {
+      "kind": "cron",
+      "expr": "0 */3 * * *",
+      "tz": "UTC",
+      "staggerMs": 300000
+    },
+    "legacy_rollout_note": "Historical rollout metadata only. Active schedule is workflow.schedule."
+  },
+  "phase3_runtime": {
+    "enabled": true,
+    "enabled_at": "2026-07-14T11:46:55Z",
+    "proposal_id": "youtube-linkedin-telegram-draft-workflow-20260713-fa7e142fbb",
+    "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+    "scope": "original visuals and carousel planning for Telegram review packets",
+    "visuals_enabled": true,
+    "carousels_enabled": true,
+    "linkedin_publishing_enabled": false,
+    "linkedin_scheduling_enabled": false,
+    "copyright_rules": [
+      "do not use YouTube frames",
+      "do not use YouTube screenshots",
+      "do not use thumbnails",
+      "do not use channel branding or logos",
+      "do not use creator likenesses",
+      "do not copy visual layouts from source videos"
+    ],
+    "visual_defaults": {
+      "model": "openai/gpt-image-2",
+      "fallback_model": "openai/gpt-image-1-mini if lower cost is required and quality is acceptable",
+      "aspect_ratios": [
+        "16:9",
+        "4:5"
+      ],
+      "style": "original editorial or infographic-style LinkedIn visual with minimal embedded text"
+    },
+    "carousel_defaults": {
+      "slide_count": "3-5",
+      "status_default": "planned_only unless the packet has enough durable substance for generated raster slides"
+    },
+    "state_contract": [
+      "visual_status",
+      "visual_asset_id",
+      "visual_prompt",
+      "visual_alt_text",
+      "visual_risk_notes",
+      "carousel_status",
+      "carousel_slide_count",
+      "carousel_outline",
+      "generated_with_model"
+    ]
+  },
+  "review_commands": [],
+  "phase4_runtime": {
+    "enabled": true,
+    "enabled_at": "2026-07-14T21:30:00Z",
+    "proposal_id": "youtube-linkedin-telegram-draft-workflow-20260713-fa7e142fbb",
+    "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+    "scope": "full approval state machine for packets, variants, visuals, and carousel items",
+    "linkedin_publishing_enabled": false,
+    "linkedin_scheduling_enabled": false,
+    "packet_status_values": [
+      "new",
+      "in_review",
+      "partially_approved",
+      "approved_for_manual_use",
+      "needs_revision",
+      "rejected",
+      "archived",
+      "error"
+    ],
+    "review_status_values": [
+      "pending_review",
+      "approved_for_manual_use",
+      "approved_for_later_publishing_review",
+      "rejected",
+      "needs_revision",
+      "superseded_by_revision",
+      "archived",
+      "error"
+    ],
+    "approval_event_schema": [
+      "event_id",
+      "timestamp",
+      "actor",
+      "command_text",
+      "target_type",
+      "target_id",
+      "previous_status",
+      "next_status",
+      "notes"
+    ],
+    "transition_rules": {
+      "new_packet": "packet_status=new; generated variants, visuals, and carousel items start as pending_review",
+      "approve_variant": "target variant version moves to approved_for_manual_use; packet becomes partially_approved or approved_for_manual_use",
+      "reject_variant": "target variant version moves to rejected; packet becomes rejected only when every variant is rejected and no revision is pending",
+      "revise_variant": "new immutable variant version is created; parent becomes superseded_by_revision; packet becomes needs_revision until delivery",
+      "why_this": "no status change; append informational approval_event",
+      "archive_packet": "packet and unresolved children move to archived",
+      "errors": "generation, parsing, delivery, or state-write failures become error with exact blocker"
+    },
+    "phase4_commands": [
+      "Status {packet_id}",
+      "Archive {packet_id}",
+      "Approve visual {visual_asset_id}",
+      "Reject visual {visual_asset_id}",
+      "Revise visual {visual_asset_id}: {instruction}"
+    ],
+    "publishing_boundary": "Legacy rollout note: approval was originally manual-use/later-review only. The current workflow now has a guarded LinkedIn publishing gate with explicit per-post confirmation.",
+    "hardening": {
+      "updated_at": "2026-07-14T21:38:00Z",
+      "existing_packets_backfilled": 5,
+      "approval_event_smoke_test": "evt_phase4_status_smoke_20260714_2138",
+      "carousel_generation_strategy": "deterministic_svg_from_existing_outlines",
+      "diagnostic_cleanup": "cron prompt updated to prefer structured state operations and avoid brittle inline Python/heredoc helpers"
+    },
+    "legacy_rollout_name": "phase4"
+  },
+  "variants": {
+    "434cG4g5KLE_builder_insight_v1": {
+      "variant_id": "434cG4g5KLE_builder_insight_v1",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "variant_version": 1,
+      "variant_type": "builder_insight",
+      "angle": "AI-generated code is most useful when much of it is disposable verification work around carefully reviewed production code.",
+      "created_at": "2026-07-23T10:50:00Z",
+      "created_by_run_id": "run_youtube_linkedin_20260723_1050_434cG4g5KLE",
+      "review_status": "pending_review",
+      "publish_status": "not_requested",
+      "post_text": "The strongest AI coding advice in this transcript is not “read less code.” It is: stop treating all generated code as if it has to become product code.\n\nThat distinction matters. The transcript keeps separating shipped code from throwaway code: production changes still deserve careful review, especially in high-risk systems. But cheap generated code can sit around the product and make the important code safer.\n\nUse it for test harnesses. Use it for one-off debuggers. Use it to stress test a theory, port something experimentally, probe an API, generate custom lint rules, or spin up disposable agents against a new SDK.\n\nThe useful shift is a funnel: lots of cheap exploratory code at the top, fewer reviewed changes near the bottom, and a very small amount of carefully protected production code that actually ships.\n\nFor engineering teams, that means the question is not “how much AI code can we merge?”\n\nThe better question is “how much disposable code can we generate to improve our confidence in the code we do merge?”\n\nThat is a much healthier frame for AI-assisted development.\n\n#AIEngineering #SoftwareEngineering #DeveloperTools #CodeReview #Testing",
+      "short_preview": "Cheap generated code is healthiest as disposable verification work, not as unreviewed product code.",
+      "hook_score": 86,
+      "usefulness_score": 91,
+      "risk_score": 18,
+      "score_notes": {
+        "hook": "Specific reframing of a hot AI-code debate without reusing the video title as the opener.",
+        "usefulness": "Gives concrete engineering uses from the transcript: harnesses, debuggers, stress tests, lint rules, API probes, and review funnels.",
+        "risk": "Moderate because the source uses provocative language around safety-critical systems; draft neutralizes that and avoids telling teams to lower review standards."
+      },
+      "transcript_basis": {
+        "transcript_status": "available",
+        "transcript_char_count": 26510,
+        "word_count": 5028,
+        "paragraph_count": 77,
+        "subtitle_mode": "api",
+        "subtitle_language": "en",
+        "egress_method": "transcriptapi-api",
+        "tailscale_exit_node": "100.98.238.65",
+        "validation_artifact": "/home/sam/.openclaw/workspace/artifacts/youtube-transcripts/434cG4g5KLE.validation.json",
+        "transcript_artifact": "/tmp/youtube-transcript-434cG4g5KLE-clean.json",
+        "transcript_artifact_sha256": "e624cc6267a837b717ad78a47872bf22dd7379f0be43a2d33672d71dacbcb04a",
+        "source_basis_note": "Draft and visual are based on TranscriptAPI transcript text for the exact requested YouTube URL; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+        "source_confidence": "sufficient",
+        "key_transcript_points": [
+          "The transcript distinguishes shipped production code from generated throwaway code used for exploration and verification.",
+          "It argues important code should still be read and verified carefully, while cheap generated code can create test harnesses, debuggers, runtimes, stress tests, lint rules, and API probes.",
+          "It frames code as a funnel of importance: lots of disposable code at the top, progressively less code moving toward carefully reviewed production changes."
+        ],
+        "segment_count": 689,
+        "source_method": "transcriptapi",
+        "provider": "transcriptapi",
+        "transcriptapi_validated_at": "2026-07-23T14:06:00Z",
+        "transcriptapi_source_url": "https://www.youtube.com/watch?v=434cG4g5KLE&t=2s"
+      },
+      "tags": [
+        "AIEngineering",
+        "SoftwareEngineering",
+        "DeveloperTools",
+        "CodeReview",
+        "Testing"
+      ],
+      "source_confidence": "sufficient",
+      "revision_parent_variant_id": null,
+      "latest_delivery": {
+        "delivered_at": "2026-07-23T14:06:00Z",
+        "channel": "telegram",
+        "to": "8692887396",
+        "message_id": "166",
+        "media_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "media_attached": true,
+        "openclaw_control_ui_rendered": true
+      }
+    },
+    "434cG4g5KLE_builder_insight_v2": {
+      "variant_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "variant_version": 2,
+      "variant_type": "builder_insight",
+      "angle": "Use AI-generated disposable verification code to protect the smaller set of code that actually ships.",
+      "created_at": "2026-07-23T14:15:00Z",
+      "created_by_run_id": "run_youtube_linkedin_20260723_1415_transcriptapi_rewrite_434cG4g5KLE",
+      "review_status": "approved",
+      "publish_status": "published",
+      "post_text": "AI-generated code changes the review problem.\n\nThe easy reaction is to ask engineers to read faster. I don’t think that is the useful lesson.\n\nThe better move is to split generated code into two categories: code that ships, and code that helps you decide what deserves to ship.\n\nThe first category still needs care. If a change touches production, security, money, infrastructure, or anything users depend on, it belongs in the normal review path.\n\nThe second category is where AI gets really interesting.\n\nGenerate the test harness. Generate the one-off debugger. Generate the custom lint rule. Generate the API probe, stress test, compiler hook, or tiny script that answers one question and can be thrown away afterwards.\n\nThat kind of code does not need to be precious. It needs to increase confidence.\n\nSo the practical shift is not “merge more AI code.”\n\nIt is: use more disposable code to protect the small amount of code that actually matters.\n\nThat is a much stronger operating model for AI-assisted engineering.\n\n#AIEngineering #SoftwareEngineering #DeveloperTools #CodeReview #Testing",
+      "short_preview": "Use disposable AI-generated code to build confidence around the production code that matters.",
+      "hook_score": 91,
+      "usefulness_score": 94,
+      "risk_score": 11,
+      "score_notes": {
+        "hook": "Starts with a clear point of view about AI-generated code review instead of mentioning the transcript or repeating the title.",
+        "usefulness": "Turns the video into an actionable engineering model: separate shippable code from disposable verification code.",
+        "risk": "Lower risk than v1 because it avoids provocative source phrasing and clearly keeps production/security/user-impacting code in review."
+      },
+      "transcript_basis": {
+        "transcript_status": "available",
+        "transcript_char_count": 26510,
+        "word_count": 5028,
+        "paragraph_count": 77,
+        "subtitle_mode": "api",
+        "subtitle_language": "en",
+        "egress_method": "transcriptapi-api",
+        "tailscale_exit_node": "100.98.238.65",
+        "validation_artifact": "/home/sam/.openclaw/workspace/artifacts/youtube-transcripts/434cG4g5KLE.validation.json",
+        "transcript_artifact": "/tmp/youtube-transcript-434cG4g5KLE-clean.json",
+        "transcript_artifact_sha256": "e624cc6267a837b717ad78a47872bf22dd7379f0be43a2d33672d71dacbcb04a",
+        "source_basis_note": "Draft is based on Saara’s understanding of the TranscriptAPI transcript: generated code should be split into shippable product code versus disposable verification/exploration code. The public post intentionally does not mention transcripts, captions, the video title, or source metadata.",
+        "source_confidence": "sufficient",
+        "key_transcript_points": [
+          "The video argues that not all generated code has the same importance or review burden.",
+          "Production-impacting code still deserves careful review, especially in high-risk systems.",
+          "AI-generated code is especially useful for disposable verification work: test harnesses, debuggers, lint rules, API probes, stress tests, compiler hooks, and one-off scripts.",
+          "The practical model is a funnel: lots of cheap exploratory code helps protect a smaller amount of important code that ships."
+        ],
+        "segment_count": 689,
+        "source_method": "transcriptapi",
+        "provider": "transcriptapi",
+        "transcriptapi_validated_at": "2026-07-23T14:06:00Z",
+        "transcriptapi_source_url": "https://www.youtube.com/watch?v=434cG4g5KLE&t=2s"
+      },
+      "tags": [
+        "AIEngineering",
+        "SoftwareEngineering",
+        "DeveloperTools",
+        "CodeReview",
+        "Testing"
+      ],
+      "source_confidence": "sufficient",
+      "revision_parent_variant_id": "434cG4g5KLE_builder_insight_v1",
+      "latest_delivery": {
+        "delivered_at": "2026-07-23T14:18:00Z",
+        "channel": "telegram",
+        "to": "8692887396",
+        "message_id": "168",
+        "media_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "media_attached": true,
+        "note": "Revised v2 packet sent after quality repair."
+      },
+      "revision_reason": "Mr. Sam requested a higher-quality LinkedIn post written as learned understanding from the video transcript, without mentioning transcript/source mechanics.",
+      "approved_at": "2026-07-23T14:18:31Z",
+      "approved_by": "Mr. Sam",
+      "approval_command": "Approve 434cG4g5KLE_builder_insight_v2",
+      "published_at": "2026-07-23T14:31:00Z",
+      "linkedin_post_urn": "urn:li:share:7486065849787834368",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7486065849787834368"
+    }
+  },
+  "visual_assets": {
+    "pkt_434cG4g5KLE_v1_primary_png": {
+      "visual_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "created_at": "2026-07-23T10:50:00Z",
+      "created_by_run_id": "run_youtube_linkedin_20260723_1050_434cG4g5KLE",
+      "status": "approved",
+      "review_status": "approved",
+      "asset_type": "primary_image",
+      "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1736,
+        "height": 906
+      },
+      "generated_with_model": "built-in image_gen tool",
+      "prompt": "Original editorial infographic showing many disposable test/probe snippets flowing through verification gates into a protected production core; based on transcript theme of cheap generated verification code around carefully reviewed shipped code.",
+      "alt_text": "Original infographic of many disposable code snippets flowing through testing and review gates into a small protected production module.",
+      "source_notes": "Generated from transcript-derived topic only. No YouTube frames, thumbnails, channel branding, creator likenesses, logos, or copied source layouts used.",
+      "risk_notes": "Low copyright/likeness risk; image is original and abstract.",
+      "approved_at": "2026-07-23T14:27:00Z",
+      "approved_by": "Mr. Sam",
+      "approval_command": "Approve visual pkt_434cG4g5KLE_v1_primary_png"
+    }
+  },
+  "carousels": {
+    "carousel_434cG4g5KLE_v1": {
+      "carousel_id": "carousel_434cG4g5KLE_v1",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "created_at": "2026-07-23T10:50:00Z",
+      "status": "planned_only",
+      "review_status": "pending_review",
+      "carousel_slide_count": 4,
+      "carousel_outline": [
+        "Slide 1: Not all generated code belongs in production.",
+        "Slide 2: Use disposable code for harnesses, probes, stress tests, and debuggers.",
+        "Slide 3: Keep the important code in the careful review path.",
+        "Slide 4: Better question: what cheap code increases confidence in what ships?"
+      ],
+      "generated_with_model": "active OpenAI Codex runtime",
+      "source_notes": "Planned from transcript basis only; no copied layouts or YouTube visual material."
+    }
+  },
+  "phase3_packets": {
+    "pkt_434cG4g5KLE_v1": {
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "title": "You need to read less code (hear me out)",
+      "channel": "Theo / t3.gg",
+      "url": "https://www.youtube.com/watch?v=434cG4g5KLE",
+      "created_at": "2026-07-23T10:50:00Z",
+      "created_by_run_id": "run_youtube_linkedin_20260723_1050_434cG4g5KLE",
+      "packet_status": "published",
+      "recommendation": "Review v2. It is the cleaner approval candidate because it reads as Saara’s learned engineering point of view from the video instead of referring to transcript mechanics.",
+      "best_variant_id": "434cG4g5KLE_builder_insight_v2",
+      "variant_ids": [
+        "434cG4g5KLE_builder_insight_v1",
+        "434cG4g5KLE_builder_insight_v2"
+      ],
+      "visual_asset_ids": [
+        "pkt_434cG4g5KLE_v1_primary_png"
+      ],
+      "carousel_ids": [
+        "carousel_434cG4g5KLE_v1"
+      ],
+      "transcript_basis": {
+        "transcript_status": "available",
+        "transcript_char_count": 26510,
+        "word_count": 5028,
+        "paragraph_count": 77,
+        "subtitle_mode": "api",
+        "subtitle_language": "en",
+        "egress_method": "transcriptapi-api",
+        "tailscale_exit_node": "100.98.238.65",
+        "validation_artifact": "/home/sam/.openclaw/workspace/artifacts/youtube-transcripts/434cG4g5KLE.validation.json",
+        "transcript_artifact": "/tmp/youtube-transcript-434cG4g5KLE-clean.json",
+        "transcript_artifact_sha256": "e624cc6267a837b717ad78a47872bf22dd7379f0be43a2d33672d71dacbcb04a",
+        "source_basis_note": "Draft and visual are based on TranscriptAPI transcript text for the exact requested YouTube URL; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+        "source_confidence": "sufficient",
+        "key_transcript_points": [
+          "The transcript distinguishes shipped production code from generated throwaway code used for exploration and verification.",
+          "It argues important code should still be read and verified carefully, while cheap generated code can create test harnesses, debuggers, runtimes, stress tests, lint rules, and API probes.",
+          "It frames code as a funnel of importance: lots of disposable code at the top, progressively less code moving toward carefully reviewed production changes."
+        ],
+        "segment_count": 689,
+        "source_method": "transcriptapi",
+        "provider": "transcriptapi",
+        "transcriptapi_validated_at": "2026-07-23T14:06:00Z",
+        "transcriptapi_source_url": "https://www.youtube.com/watch?v=434cG4g5KLE&t=2s"
+      },
+      "transcript_status": "available",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "TranscriptAPI via transcriptapi skill",
+      "transcript_char_count": 26510,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=434cG4g5KLE"
+      ],
+      "source_basis_note": "Draft and visual are based on TranscriptAPI transcript text for the exact requested YouTube URL; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+      "source_confidence": "sufficient",
+      "previous_disposition": "held_insufficient_source_context",
+      "audit_note": "Original 2026-07-23T00:01Z insufficient_source_context run is preserved in runs/outcomes; this one-shot adds a new transcript-backed packet after Saara validated caption capture.",
+      "latest_delivery": {
+        "delivered_at": "2026-07-23T14:18:00Z",
+        "channel": "telegram",
+        "to": "8692887396",
+        "message_id": "168",
+        "media_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "media_attached": true,
+        "note": "Revised v2 packet sent after quality repair."
+      },
+      "latest_revision": {
+        "created_at": "2026-07-23T14:15:00Z",
+        "previous_variant_id": "434cG4g5KLE_builder_insight_v1",
+        "new_variant_id": "434cG4g5KLE_builder_insight_v2",
+        "reason": "Mr. Sam requested a higher-quality LinkedIn post written as learned understanding from the video transcript, without mentioning transcript/source mechanics."
+      },
+      "approved_variant_id": "434cG4g5KLE_builder_insight_v2",
+      "last_approval_at": "2026-07-23T14:18:31Z",
+      "approved_visual_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+      "last_visual_approval_at": "2026-07-23T14:27:00Z",
+      "published_variant_id": "434cG4g5KLE_builder_insight_v2",
+      "published_at": "2026-07-23T14:31:00Z"
+    }
+  },
+  "phase5_runtime": {
+    "enabled": true,
+    "enabled_at": "2026-07-14T21:44:00Z",
+    "proposal_id": "youtube-linkedin-telegram-draft-workflow-20260713-fa7e142fbb",
+    "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+    "scope": "Guarded LinkedIn publishing integration with explicit per-post approval and dry-run preflight",
+    "automatic_publishing_enabled": false,
+    "linkedin_publishing_gate_enabled": true,
+    "linkedin_scheduling_enabled": false,
+    "linkedin_connection_status": "verified",
+    "linkedin_connection_checked_at": "2026-07-14T22:05:00Z",
+    "linkedin_connection_check": {
+      "method": "GET",
+      "endpoint": "/linkedin/rest/me",
+      "http_status": 200,
+      "result": "LinkedIn connection verified through Maton gateway; profile identifiers intentionally not stored in workflow state.",
+      "secret_redacted": true,
+      "pii_redacted": true
+    },
+    "linkedin_post_endpoint": {
+      "method": "POST",
+      "endpoint": "/linkedin/rest/posts",
+      "required_headers": [
+        "LinkedIn-Version: 202506",
+        "Content-Type: application/json"
+      ],
+      "lifecycleState": "PUBLISHED",
+      "visibility": "PUBLIC"
+    },
+    "publish_status_values": [
+      "not_requested",
+      "preflight_ready",
+      "blocked_no_linkedin_connection",
+      "blocked_unapproved_variant",
+      "blocked_missing_target",
+      "awaiting_explicit_confirmation",
+      "published",
+      "failed",
+      "cancelled",
+      "failed_invalid_local_success"
+    ],
+    "publish_commands": [
+      "Publish dry-run {variant_id}",
+      "Prepare publish {variant_id}",
+      "Publish {variant_id}",
+      "Cancel publish {variant_id}"
+    ],
+    "required_publish_checks": [
+      "LinkedIn connection verified with GET /linkedin/rest/me",
+      "target LinkedIn profile or page confirmed",
+      "variant review_status is approved_for_manual_use or approved_for_later_publishing_review",
+      "exact final commentary text is shown",
+      "exact POST /linkedin/rest/posts request body is shown",
+      "Mr. Sam gives explicit current confirmation for that exact POST"
+    ],
+    "telegram_message_style": {
+      "format": "human_readable",
+      "rules": [
+        "Do not send raw key=value status dumps.",
+        "Do not send JSON blobs or semicolon-separated diagnostics.",
+        "Use a short title, plain-language status, one blocker if present, and one next action.",
+        "Keep packet_id and variant_id copyable, but label them in normal language.",
+        "When asking for approval, rejection, revision, dry-run, prepare, or publish decisions, include the YouTube video title, channel, URL, packet ID, variant ID, variant angle/type, short draft or summary preview, full proposed LinkedIn post text, score/risk summary when available, and the exact next command.",
+        "When packets are created, the final delivered Telegram message must include the full review packet and exact next commands like Approve {variant_id}.",
+        "If full post text is missing for a variant, generate and persist it before asking Mr. Sam to approve."
+      ],
+      "example_blocked_unapproved_variant": "Publish dry-run: not ready yet\n\nLinkedIn is connected, but this draft has not been approved yet.\n\nVideo: OpenAI Removed Codex\nChannel: Theo / t3.gg\nLink: https://www.youtube.com/watch?v=W6BKtht3IFM\nPacket: pkt_W6BKtht3IFM_v1\n\nDraft option: builder insight\nVariant: W6BKtht3IFM_builder_insight_v1\nPreview: The headline is removal, but the lesson is migration architecture.\nScores: hook 92, usefulness 94, risk 14\n\nProposed LinkedIn post:\nOpenAI removing Codex is a useful reminder for anyone building on fast-moving AI tools:\n\nTreat tools as dependencies, not foundations.\n\nThe real lesson is not whether one product stays or goes. It is whether your workflow can survive when a vendor changes direction, renames a feature, removes an interface, or replaces the thing your team quietly started depending on.\n\nGood AI engineering needs a migration layer:\n- clear boundaries around vendor-specific calls\n- prompts and workflows stored outside the tool UI\n- evals that tell you when behavior changes\n- fallback paths before the outage happens\n\nThe teams that move fastest over time are not the ones betting everything on one tool.\n\nThey are the ones designing for portability from day one.\n\nNext step: reply with Approve W6BKtht3IFM_builder_insight_v1 if this is the draft you want."
+    },
+    "safety_boundary": "No POST, schedule, comment, or message action may run from cron automatically. Public LinkedIn posting requires explicit per-post confirmation after preflight.",
+    "next_publish_blocker": null,
+    "last_publish_dry_run": {
+      "checked_at": "2026-07-23T14:27:00Z",
+      "command_text": "Publish dry-run 434cG4g5KLE_builder_insight_v2",
+      "variant_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "result": "preflight_ready_no_post_called",
+      "post_called": false,
+      "image_upload_called": false,
+      "linkedin_connection_verified": true,
+      "variant_approved": true,
+      "visual_approved": true,
+      "prepared_preview_current": true,
+      "blocker": "No blocker for preview/dry-run. Real publish still requires exact confirmed command and image upload to obtain media URN before POST.",
+      "next_command": "Publish 434cG4g5KLE_builder_insight_v2 confirmed"
+    },
+    "last_variant_approval": {
+      "timestamp": "2026-07-14T22:33:08Z",
+      "variant_id": "W6BKtht3IFM_builder_insight_v1",
+      "approval_event_id": "evt_approve_W6BKtht3IFM_builder_insight_v1_20260714_223308",
+      "publish_called": false,
+      "scheduling_called": false
+    },
+    "prepared_publish_preview": {
+      "prepared_at": "2026-07-23T14:27:00Z",
+      "status": "published",
+      "command_text": "Prepare publish 434cG4g5KLE_builder_insight_v2",
+      "variant_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "endpoint": "/linkedin/rest/posts",
+      "method": "POST",
+      "headers": {
+        "LinkedIn-Version": "202607",
+        "Content-Type": "application/json",
+        "X-Restli-Protocol-Version": "2.0.0"
+      },
+      "author": "urn:li:person:WRCnY_7Us7",
+      "request_body_template": {
+        "author": "urn:li:person:WRCnY_7Us7",
+        "lifecycleState": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "commentary": "AI-generated code changes the review problem.\n\nThe easy reaction is to ask engineers to read faster. I don’t think that is the useful lesson.\n\nThe better move is to split generated code into two categories: code that ships, and code that helps you decide what deserves to ship.\n\nThe first category still needs care. If a change touches production, security, money, infrastructure, or anything users depend on, it belongs in the normal review path.\n\nThe second category is where AI gets really interesting.\n\nGenerate the test harness. Generate the one-off debugger. Generate the custom lint rule. Generate the API probe, stress test, compiler hook, or tiny script that answers one question and can be thrown away afterwards.\n\nThat kind of code does not need to be precious. It needs to increase confidence.\n\nSo the practical shift is not “merge more AI code.”\n\nIt is: use more disposable code to protect the small amount of code that actually matters.\n\nThat is a much stronger operating model for AI-assisted engineering.\n\n#AIEngineering #SoftwareEngineering #DeveloperTools #CodeReview #Testing",
+        "distribution": {
+          "feedDistribution": "MAIN_FEED"
+        },
+        "content": {
+          "media": {
+            "id": "<uploaded LinkedIn image URN from approved visual asset>",
+            "altText": "Original infographic of many disposable code snippets flowing through testing and review gates into a small protected production module."
+          }
+        }
+      },
+      "request_body_is_exact": true,
+      "exact_payload_blocker": null,
+      "approved_variant": true,
+      "approved_visual": true,
+      "visual_asset": {
+        "visual_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+        "mime_type": "image/png",
+        "alt_text": "Original infographic of many disposable code snippets flowing through testing and review gates into a small protected production module.",
+        "review_status": "approved",
+        "upload_required_before_post": true
+      },
+      "linkedin_connection_check": {
+        "checked_at": "2026-07-23T14:27:00Z",
+        "method": "GET",
+        "endpoint": "/linkedin/rest/me",
+        "http_status": 200,
+        "linkedin_version": "202607",
+        "author": "urn:li:person:WRCnY_7Us7",
+        "result": "verified"
+      },
+      "safety": "Published only after exact confirmed command from Mr. Sam; used uploaded image media and no YouTube article link card.",
+      "next_command": "Publish 434cG4g5KLE_builder_insight_v2 confirmed",
+      "request_body": {
+        "author": "urn:li:person:WRCnY_7Us7",
+        "lifecycleState": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "commentary": "AI-generated code changes the review problem.\n\nThe easy reaction is to ask engineers to read faster. I don’t think that is the useful lesson.\n\nThe better move is to split generated code into two categories: code that ships, and code that helps you decide what deserves to ship.\n\nThe first category still needs care. If a change touches production, security, money, infrastructure, or anything users depend on, it belongs in the normal review path.\n\nThe second category is where AI gets really interesting.\n\nGenerate the test harness. Generate the one-off debugger. Generate the custom lint rule. Generate the API probe, stress test, compiler hook, or tiny script that answers one question and can be thrown away afterwards.\n\nThat kind of code does not need to be precious. It needs to increase confidence.\n\nSo the practical shift is not “merge more AI code.”\n\nIt is: use more disposable code to protect the small amount of code that actually matters.\n\nThat is a much stronger operating model for AI-assisted engineering.\n\n#AIEngineering #SoftwareEngineering #DeveloperTools #CodeReview #Testing",
+        "distribution": {
+          "feedDistribution": "MAIN_FEED"
+        },
+        "content": {
+          "media": {
+            "id": "urn:li:image:D4E10AQEVB9KtMugOCg",
+            "altText": "Original infographic of many disposable code snippets flowing through testing and review gates into a small protected production module."
+          }
+        }
+      },
+      "uploaded_image": {
+        "image_urn": "urn:li:image:D4E10AQEVB9KtMugOCg",
+        "source_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "source_path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+        "mime_type": "image/png",
+        "uploaded_at": "2026-07-23T14:31:00Z",
+        "initialize_status": 200,
+        "upload_status": 201
+      },
+      "published_at": "2026-07-23T14:31:00Z",
+      "linkedin_post_urn": "urn:li:share:7486065849787834368",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7486065849787834368"
+    },
+    "last_prepare_publish": {
+      "prepared_at": "2026-07-23T14:27:00Z",
+      "status": "published",
+      "command_text": "Prepare publish 434cG4g5KLE_builder_insight_v2",
+      "variant_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "endpoint": "/linkedin/rest/posts",
+      "method": "POST",
+      "headers": {
+        "LinkedIn-Version": "202607",
+        "Content-Type": "application/json",
+        "X-Restli-Protocol-Version": "2.0.0"
+      },
+      "author": "urn:li:person:WRCnY_7Us7",
+      "request_body_template": {
+        "author": "urn:li:person:WRCnY_7Us7",
+        "lifecycleState": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "commentary": "AI-generated code changes the review problem.\n\nThe easy reaction is to ask engineers to read faster. I don’t think that is the useful lesson.\n\nThe better move is to split generated code into two categories: code that ships, and code that helps you decide what deserves to ship.\n\nThe first category still needs care. If a change touches production, security, money, infrastructure, or anything users depend on, it belongs in the normal review path.\n\nThe second category is where AI gets really interesting.\n\nGenerate the test harness. Generate the one-off debugger. Generate the custom lint rule. Generate the API probe, stress test, compiler hook, or tiny script that answers one question and can be thrown away afterwards.\n\nThat kind of code does not need to be precious. It needs to increase confidence.\n\nSo the practical shift is not “merge more AI code.”\n\nIt is: use more disposable code to protect the small amount of code that actually matters.\n\nThat is a much stronger operating model for AI-assisted engineering.\n\n#AIEngineering #SoftwareEngineering #DeveloperTools #CodeReview #Testing",
+        "distribution": {
+          "feedDistribution": "MAIN_FEED"
+        },
+        "content": {
+          "media": {
+            "id": "<uploaded LinkedIn image URN from approved visual asset>",
+            "altText": "Original infographic of many disposable code snippets flowing through testing and review gates into a small protected production module."
+          }
+        }
+      },
+      "request_body_is_exact": true,
+      "exact_payload_blocker": null,
+      "approved_variant": true,
+      "approved_visual": true,
+      "visual_asset": {
+        "visual_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+        "mime_type": "image/png",
+        "alt_text": "Original infographic of many disposable code snippets flowing through testing and review gates into a small protected production module.",
+        "review_status": "approved",
+        "upload_required_before_post": true
+      },
+      "linkedin_connection_check": {
+        "checked_at": "2026-07-23T14:27:00Z",
+        "method": "GET",
+        "endpoint": "/linkedin/rest/me",
+        "http_status": 200,
+        "linkedin_version": "202607",
+        "author": "urn:li:person:WRCnY_7Us7",
+        "result": "verified"
+      },
+      "safety": "Published only after exact confirmed command from Mr. Sam; used uploaded image media and no YouTube article link card.",
+      "next_command": "Publish 434cG4g5KLE_builder_insight_v2 confirmed",
+      "request_body": {
+        "author": "urn:li:person:WRCnY_7Us7",
+        "lifecycleState": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "commentary": "AI-generated code changes the review problem.\n\nThe easy reaction is to ask engineers to read faster. I don’t think that is the useful lesson.\n\nThe better move is to split generated code into two categories: code that ships, and code that helps you decide what deserves to ship.\n\nThe first category still needs care. If a change touches production, security, money, infrastructure, or anything users depend on, it belongs in the normal review path.\n\nThe second category is where AI gets really interesting.\n\nGenerate the test harness. Generate the one-off debugger. Generate the custom lint rule. Generate the API probe, stress test, compiler hook, or tiny script that answers one question and can be thrown away afterwards.\n\nThat kind of code does not need to be precious. It needs to increase confidence.\n\nSo the practical shift is not “merge more AI code.”\n\nIt is: use more disposable code to protect the small amount of code that actually matters.\n\nThat is a much stronger operating model for AI-assisted engineering.\n\n#AIEngineering #SoftwareEngineering #DeveloperTools #CodeReview #Testing",
+        "distribution": {
+          "feedDistribution": "MAIN_FEED"
+        },
+        "content": {
+          "media": {
+            "id": "urn:li:image:D4E10AQEVB9KtMugOCg",
+            "altText": "Original infographic of many disposable code snippets flowing through testing and review gates into a small protected production module."
+          }
+        }
+      },
+      "uploaded_image": {
+        "image_urn": "urn:li:image:D4E10AQEVB9KtMugOCg",
+        "source_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "source_path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+        "mime_type": "image/png",
+        "uploaded_at": "2026-07-23T14:31:00Z",
+        "initialize_status": 200,
+        "upload_status": 201
+      },
+      "published_at": "2026-07-23T14:31:00Z",
+      "linkedin_post_urn": "urn:li:share:7486065849787834368",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7486065849787834368"
+    },
+    "last_published_variant_id": "434cG4g5KLE_builder_insight_v2",
+    "last_published_at": "2026-07-23T14:31:00Z",
+    "last_linkedin_post_urn": "urn:li:share:7486065849787834368",
+    "legacy_rollout_name": "phase5",
+    "telegram_publish_guardrails": {
+      "bare_publish_command_allowed": false,
+      "publish_requires_variant_id": true,
+      "publish_requires_confirmed_suffix": true,
+      "publish_requires_current_prepared_preview_same_variant": true,
+      "publish_success_requires_api_returned_post_urn": true,
+      "on_missing_prepare_preview": "block_and_send_prepare_publish_instruction",
+      "on_unverifiable_post_urn": "mark_failed_not_published"
+    },
+    "publish_execution_instructions": {
+      "execute_when_checks_pass": true,
+      "api_route": "https://api.maton.ai/linkedin/rest/posts",
+      "method": "POST",
+      "source_of_request_body": "phase5_runtime.prepared_publish_preview.request_body",
+      "required_headers": [
+        "Authorization: Bearer $MATON_API_KEY",
+        "Content-Type: application/json",
+        "LinkedIn-Version: 202506",
+        "X-Restli-Protocol-Version: 2.0.0"
+      ],
+      "success_condition": "HTTP 201 with API-returned x-restli-id or Location storing a real LinkedIn URN/location",
+      "block_only_if": [
+        "MATON_API_KEY missing",
+        "LinkedIn connection check fails",
+        "prepared preview missing or variant mismatch",
+        "POST fails",
+        "API response has no verifiable returned URN/location"
+      ]
+    },
+    "publish_media_policy": {
+      "enabled": true,
+      "reason": "Mr. Sam strictly does not want YouTube link cards in LinkedIn posts; generated thumbnails must be used as media instead.",
+      "forbidden_publish_payloads": [
+        "content.article.source containing a YouTube URL",
+        "fallback to embedded YouTube link card when no image is available"
+      ],
+      "required_publish_flow": [
+        "ensure packet has primary_image_asset_id",
+        "if primary asset is SVG and a review SVG exists, convert it to PNG before blocking",
+        "ensure primary image MIME type is image/png, image/jpeg, or image/gif",
+        "initialize LinkedIn Images API upload with owner author URN",
+        "upload binary to returned uploadUrl without Authorization header",
+        "create LinkedIn post with content.media.id and content.media.altText",
+        "omit content.article entirely unless Mr. Sam explicitly asks for a link card"
+      ],
+      "supported_linkedin_image_mime_types": [
+        "image/png",
+        "image/jpeg",
+        "image/gif"
+      ],
+      "post_content_shape": {
+        "text_only_allowed": false,
+        "image_media_preferred": true,
+        "article_link_card_allowed_by_default": false,
+        "youtube_article_link_card_allowed": false,
+        "media_schema": {
+          "content": {
+            "media": {
+              "id": "urn:li:image:...",
+              "altText": "short accessible image description"
+            }
+          }
+        }
+      },
+      "blockers": {
+        "only_svg_asset": "Auto-convert the review SVG to PNG if present; block only if conversion/regeneration fails.",
+        "missing_image_asset": "Generate a primary image before publish.",
+        "image_upload_failed": "Do not publish with YouTube article fallback; report upload failure."
+      },
+      "official_source_notes": [
+        "LinkedIn Images API supports JPG, GIF, and PNG formats.",
+        "LinkedIn image posts use content.media.id with the uploaded urn:li:image asset."
+      ],
+      "updated_at": "2026-07-15T11:48:02Z",
+      "republish_after_user_delete": {
+        "enabled": true,
+        "rule": "If Mr. Sam reports that a previously recorded LinkedIn post was deleted, mark the old URN deleted_by_user/superseded and allow a fresh same-variant Prepare/Publish confirmation instead of returning Already published.",
+        "updated_at": "2026-07-15T12:03:44Z"
+      }
+    },
+    "superseded_prepared_publish_previews": [
+      {
+        "superseded_at": "2026-07-15T11:53:00Z",
+        "reason": "Old current preview used a YouTube article card; current policy requires uploaded image media and forbids YouTube link cards.",
+        "preview": {
+          "prepared_at": "2026-07-15T11:08:00Z",
+          "status": "published",
+          "command_text": "Prepare publish kAjNWanR3n8_builder_insight_v3",
+          "variant_id": "kAjNWanR3n8_builder_insight_v3",
+          "packet_id": "pkt_kAjNWanR3n8_v1",
+          "endpoint": "/linkedin/rest/posts",
+          "method": "POST",
+          "headers": {
+            "LinkedIn-Version": "202506",
+            "Content-Type": "application/json"
+          },
+          "request_body": {
+            "author": "urn:li:person:WRCnY_7Us7",
+            "lifecycleState": "PUBLISHED",
+            "visibility": "PUBLIC",
+            "commentary": "I just looked at Bun's Rust rewrite, and the part that feels most important is how intentionally boring the user-facing outcome is.\n\nThe headline is Zig to Rust, but the actual story is stability. Bun's own write-up says v1.4 fixed 128 bugs that reproduced in v1.3.14, many in memory-safety territory: use-after-free, leaks, crashes around Node APIs, and cleanup edge cases.\n\nThat changes how I read the rewrite. This isn't \"Rust because Rust is fashionable.\" It's a bet that the runtime had reached a point where ownership rules, cleanup semantics, and compiler feedback were a better operating model than relying on review discipline forever.\n\nThe AI angle is interesting too. The rewrite used Claude-driven workflows, but the guardrail was not vibes. It was the existing architecture, the test suite, adversarial review, and the goal of keeping behavior close enough that users barely notice.\n\nMy take: the real asset was not the new language. It was the ability to verify the migration.\n\n#JavaScript #RustLang #DeveloperTools #SoftwareArchitecture #AIEngineering",
+            "distribution": {
+              "feedDistribution": "MAIN_FEED"
+            },
+            "content": {
+              "article": {
+                "source": "https://www.youtube.com/watch?v=kAjNWanR3n8",
+                "title": "We need to talk about the Bun Rust rewrite",
+                "description": "A builder-focused note on Bun’s Rust rewrite, memory-safety fixes, AI-assisted migration, and why verification matters more than the language switch."
+              }
+            }
+          },
+          "safety": "Preview only. No POST has been made. Requires exact current confirmation: Publish kAjNWanR3n8_builder_insight_v3 confirmed",
+          "published_at": "2026-07-15T11:22:18Z",
+          "linkedin_post_urn": "urn:li:share:7483118693493858304",
+          "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7483118693493858304",
+          "superseded_payload_policy": "article_youtube_link_card_forbidden_for_future_posts",
+          "note": "This published payload used a YouTube article card before the media policy fix; do not use this shape for future prepares."
+        }
+      }
+    ],
+    "last_deleted_or_superseded_linkedin_post": {
+      "variant_id": "kAjNWanR3n8_builder_insight_v3",
+      "old_linkedin_post_urn": "urn:li:share:7483118693493858304",
+      "old_linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7483118693493858304",
+      "reported_deleted_at": "2026-07-15T12:03:44Z",
+      "replacement_linkedin_post_urn": "urn:li:share:7483129104016531457",
+      "replacement_linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7483129104016531457"
+    }
+  },
+  "approval_events": [
+    {
+      "event_id": "evt_packet_created_434cG4g5KLE_20260723_105000",
+      "timestamp": "2026-07-23T10:50:00Z",
+      "actor": "linkedinengine_cron_one_shot",
+      "command_text": "Generate transcript-backed review packet for 434cG4g5KLE",
+      "target_type": "packet",
+      "target_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "held_insufficient_source_context",
+      "next_status": "in_review",
+      "notes": "Created immutable transcript-backed packet and pending-review variant after validated youtube-transcript-generator transcript capture."
+    },
+    {
+      "event_id": "approval_1784816330505_434cG4g5KLE_builder_insight_v2",
+      "type": "approval",
+      "created_at": "2026-07-23T14:18:31Z",
+      "timestamp": "2026-07-23T14:18:31Z",
+      "actor": "Mr. Sam",
+      "command_text": "Approve 434cG4g5KLE_builder_insight_v2",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "pending_review",
+      "next_status": "approved",
+      "notes": "Variant approved from WebChat command. Publishing remains blocked until prepare/dry-run and exact confirmed publish command."
+    },
+    {
+      "event_id": "approval_1784816999773_pkt_434cG4g5KLE_v1_primary_png",
+      "type": "approval",
+      "created_at": "2026-07-23T14:27:00Z",
+      "timestamp": "2026-07-23T14:27:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Approve visual pkt_434cG4g5KLE_v1_primary_png",
+      "target_type": "visual_asset",
+      "target_id": "pkt_434cG4g5KLE_v1_primary_png",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "pending_review",
+      "next_status": "approved",
+      "notes": "Visual approved from WebChat command."
+    }
+  ],
+  "publish_events": [
+    {
+      "event_id": "publish_prepare_1784816999773_434cG4g5KLE_builder_insight_v2",
+      "type": "prepare_publish",
+      "created_at": "2026-07-23T14:27:00Z",
+      "timestamp": "2026-07-23T14:27:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Prepare publish 434cG4g5KLE_builder_insight_v2",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "not_requested",
+      "next_status": "preflight_ready",
+      "post_called": false,
+      "image_upload_called": false,
+      "notes": "Prepared publish preview without calling LinkedIn POST. Image upload deferred until confirmed publish because prepare must not POST."
+    },
+    {
+      "event_id": "publish_dry_run_1784816999774_434cG4g5KLE_builder_insight_v2",
+      "type": "publish_dry_run",
+      "created_at": "2026-07-23T14:27:00Z",
+      "timestamp": "2026-07-23T14:27:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Publish dry-run 434cG4g5KLE_builder_insight_v2",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "preflight_ready",
+      "next_status": "preflight_ready",
+      "post_called": false,
+      "image_upload_called": false,
+      "result": "preflight_ready_no_post_called",
+      "notes": "Dry-run only; verified approved variant, approved visual, LinkedIn connection, and prepared preview. No LinkedIn post or media upload was called."
+    },
+    {
+      "event_id": "publish_success_1784817183450_434cG4g5KLE_builder_insight_v2",
+      "type": "published",
+      "created_at": "2026-07-23T14:31:00Z",
+      "timestamp": "2026-07-23T14:31:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Publish 434cG4g5KLE_builder_insight_v2 confirmed",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "preflight_ready",
+      "next_status": "published",
+      "post_called": true,
+      "image_upload_called": true,
+      "image_urn": "urn:li:image:D4E10AQEVB9KtMugOCg",
+      "linkedin_post_urn": "urn:li:share:7486065849787834368",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7486065849787834368",
+      "post_status": 201,
+      "notes": "Published through Maton LinkedIn API after explicit confirmed command. Payload used uploaded image media and omitted YouTube article link card."
+    }
+  ],
+  "workflow": {
+    "name": "youtube-linkedin-review-publish",
+    "display_name": "YouTube to LinkedIn review and publish workflow",
+    "status": "production",
+    "canonical_state_path": "/home/sam/.openclaw/workspace/state/youtube_linkedin_workflow.json",
+    "legacy_state_paths": [
+      "/home/sam/.openclaw/workspace/state/youtube_linkedin_phase1.json"
+    ],
+    "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+    "schedule": {
+      "kind": "cron",
+      "expr": "0 0 * * *",
+      "tz": "UTC",
+      "staggerMs": 300000
+    },
+    "delivery": {
+      "channel": "telegram",
+      "to": "8692887396"
+    },
+    "sources": [
+      "Theo / t3.gg",
+      "ThePrimeTime",
+      "Fireship"
+    ],
+    "daily_packet_cap": 5,
+    "publishing_policy": {
+      "automatic_publishing_enabled": false,
+      "linkedin_connection_status": "verified",
+      "required_before_post": [
+        "approved variant",
+        "read-only LinkedIn connection verification",
+        "exact endpoint and body preview",
+        "explicit current confirmation from Mr. Sam for that exact POST"
+      ]
+    },
+    "refactored_at": "2026-07-15T09:39:00Z",
+    "refactor_note": "Canonicalized active workflow naming after end-to-end publishing succeeded; legacy phase metadata is retained for audit history and compatibility.",
+    "documentation_path": "/home/sam/.openclaw/workspace/docs/youtube_linkedin_workflow.md",
+    "last_schedule_change": {
+      "changed_at": "2026-07-15T09:49:00Z",
+      "actor": "saara",
+      "from": {
+        "kind": "cron",
+        "expr": "0 */3 * * *",
+        "tz": "UTC",
+        "staggerMs": 300000
+      },
+      "to": {
+        "kind": "cron",
+        "expr": "0 0 * * *",
+        "tz": "UTC",
+        "staggerMs": 300000
+      },
+      "reason": "Mr. Sam corrected the workflow cadence to 24 hours instead of 3 hours.",
+      "behavior_changed": "cadence only; approval, Telegram delivery, state path, and publish gate unchanged"
+    },
+    "quality_policy_updated_at": "2026-07-19T09:28:00Z",
+    "content_quality_policy": {
+      "basis": "transcript_first",
+      "transcript_requirement": "Approval-ready LinkedIn post content must be based on usable YouTube captions/transcript text. Use the local youtube-transcript-generator skill wrapper for transcript capture before blocking. Supporting sources may enrich or fact-check transcript-based packets, but must not replace missing captions/transcript.",
+      "title_policy": "Do not paste, rewrite, or infer the LinkedIn post from the YouTube title. The post should reflect what was learned from captions/transcript text.",
+      "length_guidance": "Usually 160-280 words, concise but not thin, short multi-paragraph structure, 4-7 short paragraphs, 1-3 sentences per paragraph.",
+      "style": [
+        "source/video-context-oriented point of view",
+        "lead from concrete observed change for update/shift/new-thing videos",
+        "one clear lesson",
+        "one practical takeaway",
+        "one concise closing point",
+        "no essay-style explainers",
+        "no exaggerated hype"
+      ],
+      "tags": {
+        "required": true,
+        "count": "3-6",
+        "placement": "end_of_post",
+        "rule": "Relevant to the actual video topic; avoid generic tag stuffing."
+      },
+      "source_context_fields": [
+        "transcript_status",
+        "source_urls",
+        "source_basis_note",
+        "source_confidence",
+        "insufficient_source_context_reason",
+        "transcript_fallback_attempted",
+        "transcript_fallback_method",
+        "transcript_char_count"
+      ],
+      "no_transcript_fallback_policy": {
+        "updated_at": "2026-07-19T09:28:00Z",
+        "rule": "If no usable captions/transcript can be obtained through the local youtube-transcript-generator skill wrapper, do not create approval-ready LinkedIn content.",
+        "allowed_supporting_source_role": "enrichment_and_fact_checking_only_after_transcript_available",
+        "forbidden_basis_without_transcript": [
+          "YouTube title",
+          "YouTube description or video page metadata alone",
+          "generic search snippets",
+          "official product/docs/release/blog/source pages alone",
+          "reputable reporting alone"
+        ],
+        "insufficient_action": "mark insufficient_source_context and skip or hold for manual review instead of asking for approval"
+      },
+      "transcript_fallback_tool": {
+        "updated_at": "2026-07-23T13:59:34Z",
+        "package": "youtube-transcript-generator-skill",
+        "helper_path": "/home/sam/.openclaw/workspace/scripts/fetch_youtube_transcript.mjs",
+        "command": "npm run youtube:transcript -- <youtube-url-or-id>",
+        "working_directory": "/home/sam/.openclaw/workspace",
+        "output": "JSON with transcript_status, source_method, provider, egress_method, attempts, transcript_char_count, subtitle mode/language when available, and transcript text",
+        "required_before_insufficient_source_context": true,
+        "packages": [
+          "youtube-transcript-generator",
+          "yt-dlp"
+        ],
+        "timeout_ms": 90000,
+        "egress": {
+          "method": "tailscale-exit-node",
+          "exit_node_ip": "100.98.238.65",
+          "exit_node_host": "admin's MacBook Pro",
+          "server_node": "srv1456572",
+          "validated_at": "2026-07-23T10:14:00Z",
+          "validated_public_ipv4": "86.17.57.122",
+          "validation_video_id": "dQw4w9WgXcQ",
+          "validation_result": "transcript_status=available; transcript_char_count=2787; subtitle_mode=manual; subtitle_language=en",
+          "required_env": {
+            "YOUTUBE_TRANSCRIPT_EGRESS": "tailscale-exit-node",
+            "YOUTUBE_TRANSCRIPT_TAILSCALE_EXIT_NODE": "100.98.238.65",
+            "YOUTUBE_TRANSCRIPT_TIMEOUT_MS": "90000"
+          },
+          "previous_candidate_validation": {
+            "video_id": "434cG4g5KLE",
+            "validated_at": "2026-07-23T10:30:00Z",
+            "result": "transcript_status=available; clean transcript text, no yt-dlp log prefix",
+            "transcript_char_count": 26729,
+            "subtitle_mode": "auto",
+            "subtitle_language": "en",
+            "egress_method": "tailscale-exit-node",
+            "tailscale_exit_node": "100.98.238.65"
+          }
+        },
+        "provider_order": [
+          "transcriptapi when TRANSCRIPT_API_KEY is configured",
+          "youtube-transcript-generator skill through Tailscale/yt-dlp fallback"
+        ],
+        "transcriptapi": {
+          "installed": true,
+          "installed_version": "1.5.0",
+          "skill_path": "/home/sam/.openclaw/workspace/skills/transcriptapi",
+          "setup_doc": "/home/sam/.openclaw/workspace/docs/transcriptapi_setup.md",
+          "required_env": "TRANSCRIPT_API_KEY",
+          "status": "configured_and_validated",
+          "forced_command": "npm run youtube:transcriptapi -- <youtube-url-or-id>",
+          "validated_at": "2026-07-23T13:59:34Z",
+          "validation_video_id": "434cG4g5KLE",
+          "validation_result": {
+            "source_method": "transcriptapi",
+            "transcript_status": "available",
+            "segment_count": 689,
+            "transcript_char_count": 26510,
+            "subtitle_language": "en"
+          }
+        },
+        "yt_dlp_fallback_command": "npm run youtube:transcript:yt-dlp -- <youtube-url-or-id>"
+      }
+    },
+    "thumbnail_policy": {
+      "required_for_selected_packets": true,
+      "primary_asset_type": "thumbnail_or_primary_image",
+      "preferred_order": [
+        "original generated image based on transcript-derived understanding",
+        "official product/docs/release/blog/public UI source context for concrete product changes",
+        "directly relevant public/official product screenshots when appropriate",
+        "original explanatory visual if screenshot usage is uncertain"
+      ],
+      "prohibited_sources": [
+        "YouTube frames",
+        "YouTube thumbnails",
+        "channel branding",
+        "creator likenesses",
+        "copied source visual layouts"
+      ],
+      "asset_fields": [
+        "thumbnail_asset_id",
+        "thumbnail_path",
+        "thumbnail_alt_text",
+        "thumbnail_source_notes",
+        "thumbnail_review_status",
+        "primary_image_asset_id",
+        "primary_image_path",
+        "primary_image_mime_type",
+        "publish_media_asset_id",
+        "publish_media_path",
+        "publish_media_mime_type",
+        "publish_media_status"
+      ],
+      "recommended_format": "LinkedIn-friendly single image, approximately 1200x627, clean and not text-heavy",
+      "publish_conversion": {
+        "enabled": true,
+        "rule": "Prepare publish must auto-convert generated SVG review thumbnails to PNG when no raster primary image exists, then use the PNG as uploaded LinkedIn media.",
+        "supported_output_mime_type": "image/png",
+        "updated_at": "2026-07-15T11:48:02Z"
+      }
+    },
+    "agent_ownership": {
+      "updated_at": "2026-07-15T15:49:00Z",
+      "controller_agent_id": "main",
+      "controller_name": "Saara",
+      "execution_agent_id": "linkedinengine",
+      "command_dispatcher_agent_id": "main",
+      "notion_agent_id": "notionknowledgeos",
+      "rule": "Saara owns cron configuration and routing; the recurring YouTube-to-LinkedIn content workflow executes as linkedinengine in an isolated specialist turn.",
+      "previous_drift": "Cron was registered under main while the prompt said it was linkedinengine.",
+      "migration": "Live cron target and documentation should use the actual linkedinengine agent instead of prompt-based specialist impersonation."
+    },
+    "last_ownership_change": {
+      "changed_at": "2026-07-15T15:49:00Z",
+      "actor": "saara",
+      "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+      "from_agent_id": "main",
+      "to_agent_id": "linkedinengine",
+      "behavior_changed": "ownership boundary only; schedule, sources, delivery, canonical state path, and guarded publish policy unchanged"
+    },
+    "telegram_packet_delivery_policy": {
+      "updated_at": "2026-07-19T09:11:00Z",
+      "media_first": true,
+      "required_for_new_packets": [
+        "attach generated thumbnail/primary image as rendered Telegram media whenever a media-capable tool is available",
+        "do not rely on YouTube link previews as packet visuals",
+        "disable webpage/link previews for YouTube URLs when supported",
+        "do not include a bare clickable YouTube URL at the end of the packet message",
+        "keep at most one labeled source URL in text and format it to avoid duplicate preview cards",
+        "record text-only fallback in run metadata if image attachment fails"
+      ]
+    },
+    "last_runtime_change": {
+      "changed_at": "2026-07-23T13:59:34Z",
+      "actor": "saara",
+      "change": "Configured TRANSCRIPT_API_KEY for OpenClaw Gateway and validated TranscriptAPI transcript retrieval.",
+      "status": "configured_and_validated"
+    }
+  },
+  "runtime": {
+    "approval_state_machine_enabled": true,
+    "visual_and_carousel_assets_enabled": true,
+    "linkedin_publish_gate_enabled": true,
+    "scheduling_enabled": false,
+    "active_status_values": [
+      "new",
+      "in_review",
+      "partially_approved",
+      "approved_for_manual_use",
+      "needs_revision",
+      "rejected",
+      "archived",
+      "error"
+    ],
+    "active_review_status_values": [
+      "pending_review",
+      "approved_for_manual_use",
+      "approved_for_later_publishing_review",
+      "rejected",
+      "needs_revision",
+      "superseded_by_revision",
+      "archived",
+      "error"
+    ],
+    "publish_status_values": [
+      "not_requested",
+      "preflight_ready",
+      "blocked_no_linkedin_connection",
+      "blocked_unapproved_variant",
+      "blocked_missing_target",
+      "awaiting_explicit_confirmation",
+      "published",
+      "failed",
+      "cancelled"
+    ],
+    "transcript_first_content_enabled": true,
+    "thumbnail_assets_enabled": true,
+    "relevant_tags_required": true,
+    "publish_uses_uploaded_image_media": true,
+    "youtube_article_cards_forbidden": true,
+    "publishable_raster_thumbnail_required": true,
+    "controller_agent_id": "main",
+    "execution_agent_id": "linkedinengine",
+    "command_dispatcher_agent_id": "main",
+    "default_cron_model": "openai/gpt-5.5",
+    "default_cron_reasoning": "medium",
+    "model_routing_updated_at": "2026-07-18T21:23:00Z",
+    "model_routing_note": "Production cron defaults to gpt-5.5 medium reasoning for quality-sensitive drafting, revisions, visual planning, approval summaries, and publish preflight; nano remains acceptable for simple classification, scoring, tagging, extraction, and compact status checks.",
+    "specialist_impersonation_removed": true,
+    "last_runtime_ownership_update": "2026-07-15T15:49:00Z",
+    "telegram_packet_media_first_required": true,
+    "telegram_youtube_link_previews_for_review_packets_forbidden": true,
+    "no_transcript_title_snippet_only_packets_forbidden": true,
+    "packet_delivery_policy_updated_at": "2026-07-19T09:11:00Z",
+    "source_quality_policy_updated_at": "2026-07-19T09:28:00Z",
+    "latest_change": "Require usable YouTube captions/transcript text for approval-ready LinkedIn posts; use the ClawHub youtube-transcript-generator skill wrapper for transcript capture; mark no-transcript candidates insufficient_source_context.",
+    "transcript_required_for_approval_ready_packets": true,
+    "transcript_fallback_helper_enabled": true,
+    "transcript_fallback_helper_path": "/home/sam/.openclaw/workspace/scripts/fetch_youtube_transcript.mjs",
+    "transcript_fallback_package": "youtube-transcript-generator-skill",
+    "no_transcript_supporting_sources_only_packets_forbidden": true,
+    "transcript_fallback_packages": [
+      "youtube-transcript-generator",
+      "yt-dlp"
+    ]
+  },
+  "last_refactor": {},
+  "last_manual_regeneration": {
+    "updated_at": "2026-07-23T10:50:00Z",
+    "run_id": "run_youtube_linkedin_20260723_1050_434cG4g5KLE",
+    "video_id": "434cG4g5KLE",
+    "packet_id": "pkt_434cG4g5KLE_v1",
+    "variant_id": "434cG4g5KLE_builder_insight_v1",
+    "reason": "One-shot transcript-backed packet creation after validated caption recovery."
+  },
+  "runtime_audit_notes": [],
+  "events": [
+    {
+      "event_id": "evt_transcript_recovery_434cG4g5KLE_20260723_105000",
+      "timestamp": "2026-07-23T10:50:00Z",
+      "type": "transcript_recovery_packet_created",
+      "run_id": "run_youtube_linkedin_20260723_1050_434cG4g5KLE",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "variant_id": "434cG4g5KLE_builder_insight_v1",
+      "visual_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+      "previous_run_id": "run_youtube_linkedin_20260723_0001",
+      "preserves_prior_history": true
+    },
+    {
+      "event_id": "evt_1784815740025_transcriptapi_packet_delivery_434cG4g5KLE",
+      "type": "packet_redelivered",
+      "created_at": "2026-07-23T14:06:00Z",
+      "actor": "saara",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "variant_id": "434cG4g5KLE_builder_insight_v1",
+      "notes": "Fetched exact requested URL with TranscriptAPI, rendered existing original thumbnail in OpenClaw Control UI, and sent Telegram media packet to Saara bot chat.",
+      "telegram_message_id": "166"
+    },
+    {
+      "event_id": "evt_1784816058750_variant_revision_434cG4g5KLE_v2",
+      "type": "variant_revised",
+      "created_at": "2026-07-23T14:15:00Z",
+      "actor": "saara",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v1",
+      "new_variant_id": "434cG4g5KLE_builder_insight_v2",
+      "previous_status": "pending_review",
+      "next_status": "pending_review",
+      "command_text": "manual quality repair after Mr. Sam said v1 was too transcript-literal",
+      "notes": "Mr. Sam requested a higher-quality LinkedIn post written as learned understanding from the video transcript, without mentioning transcript/source mechanics."
+    },
+    {
+      "event_id": "evt_1784816107706_variant_v2_delivery_434cG4g5KLE",
+      "type": "packet_redelivered",
+      "created_at": "2026-07-23T14:18:00Z",
+      "actor": "saara",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "variant_id": "434cG4g5KLE_builder_insight_v2",
+      "telegram_message_id": "168",
+      "notes": "Delivered revised v2 LinkedIn draft with media after removing transcript-literal wording."
+    },
+    {
+      "event_id": "approval_1784816330505_434cG4g5KLE_builder_insight_v2",
+      "type": "variant_approved",
+      "created_at": "2026-07-23T14:18:31Z",
+      "timestamp": "2026-07-23T14:18:31Z",
+      "actor": "Mr. Sam",
+      "command_text": "Approve 434cG4g5KLE_builder_insight_v2",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "pending_review",
+      "next_status": "approved",
+      "notes": "Variant approved from WebChat command. Publishing remains blocked until prepare/dry-run and exact confirmed publish command."
+    },
+    {
+      "event_id": "approval_1784816999773_pkt_434cG4g5KLE_v1_primary_png",
+      "type": "visual_approved",
+      "created_at": "2026-07-23T14:27:00Z",
+      "timestamp": "2026-07-23T14:27:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Approve visual pkt_434cG4g5KLE_v1_primary_png",
+      "target_type": "visual_asset",
+      "target_id": "pkt_434cG4g5KLE_v1_primary_png",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "pending_review",
+      "next_status": "approved",
+      "notes": "Visual approved from WebChat command."
+    },
+    {
+      "event_id": "publish_prepare_1784816999773_434cG4g5KLE_builder_insight_v2",
+      "type": "prepare_publish",
+      "created_at": "2026-07-23T14:27:00Z",
+      "timestamp": "2026-07-23T14:27:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Prepare publish 434cG4g5KLE_builder_insight_v2",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "not_requested",
+      "next_status": "preflight_ready",
+      "post_called": false,
+      "image_upload_called": false,
+      "notes": "Prepared publish preview without calling LinkedIn POST. Image upload deferred until confirmed publish because prepare must not POST."
+    },
+    {
+      "event_id": "publish_dry_run_1784816999774_434cG4g5KLE_builder_insight_v2",
+      "type": "publish_dry_run",
+      "created_at": "2026-07-23T14:27:00Z",
+      "timestamp": "2026-07-23T14:27:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Publish dry-run 434cG4g5KLE_builder_insight_v2",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "preflight_ready",
+      "next_status": "preflight_ready",
+      "post_called": false,
+      "image_upload_called": false,
+      "result": "preflight_ready_no_post_called",
+      "notes": "Dry-run only; verified approved variant, approved visual, LinkedIn connection, and prepared preview. No LinkedIn post or media upload was called."
+    },
+    {
+      "event_id": "publish_success_1784817183450_434cG4g5KLE_builder_insight_v2",
+      "type": "published",
+      "created_at": "2026-07-23T14:31:00Z",
+      "timestamp": "2026-07-23T14:31:00Z",
+      "actor": "Mr. Sam",
+      "command_text": "Publish 434cG4g5KLE_builder_insight_v2 confirmed",
+      "target_type": "variant",
+      "target_id": "434cG4g5KLE_builder_insight_v2",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "previous_status": "preflight_ready",
+      "next_status": "published",
+      "post_called": true,
+      "image_upload_called": true,
+      "image_urn": "urn:li:image:D4E10AQEVB9KtMugOCg",
+      "linkedin_post_urn": "urn:li:share:7486065849787834368",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7486065849787834368",
+      "post_status": 201,
+      "notes": "Published through Maton LinkedIn API after explicit confirmed command. Payload used uploaded image media and omitted YouTube article link card."
+    }
+  ]
+}

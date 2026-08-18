@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenClaw YouTube-to-LinkedIn daily digest sender
+Wants=network-online.target openclaw-gateway.service
+After=network-online.target openclaw-gateway.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/sam/.openclaw/workspace
+Environment=PATH=/home/sam/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin
+ExecStart=/usr/bin/npm --silent run youtube:digest:send
+TimeoutStartSec=20min
+StandardOutput=journal
+StandardError=journal

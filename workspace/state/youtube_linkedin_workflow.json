@@ -1,0 +1,1616 @@
+{
+  "version": 75,
+  "reset_at": "2026-07-23T15:07:00Z",
+  "reset_reason": "Start fresh after moving YouTube transcript capture to TranscriptAPI only and removing Tailscale/yt-dlp fallback state.",
+  "archive": {
+    "previous_state_path": "/home/sam/.openclaw/workspace/state/archive/youtube_linkedin_workflow_20260723_before_transcriptapi_only_reset.json",
+    "note": "Previous successful publish audit retained outside active state. Active packets, variants, assets, approvals, runs, seen videos, and publish events are reset.",
+    "last_published_variant_id": "434cG4g5KLE_builder_insight_v2",
+    "last_linkedin_post_urn": "urn:li:share:7486065849787834368",
+    "last_published_at": "2026-07-23T14:31:00Z"
+  },
+  "daily": {
+    "2026-08-04": {
+      "runs": 1,
+      "selected_packets": 1
+    }
+  },
+  "runs": [
+    {
+      "run_id": "run_youtube_linkedin_20260804_0843_434cG4g5KLE",
+      "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+      "parent_workflow_cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+      "job_name": "one-shot-linkedinengine-transcript-packet-434cG4g5KLE",
+      "started_at": "2026-08-04T08:43:00Z",
+      "completed_at": "2026-08-04T08:43:00Z",
+      "sources_checked": [
+        "Theo / t3.gg"
+      ],
+      "candidate_count": 1,
+      "selected_packet_count": 1,
+      "outcomes": {
+        "created_packets": [
+          "pkt_434cG4g5KLE_v1"
+        ],
+        "recovered_from_previous_insufficient_source_context": [],
+        "held_insufficient_source_context": [],
+        "skipped_low_durable_value": []
+      },
+      "transcript_capture": {
+        "helper": "npm run youtube:transcript -- <youtube-url-or-video-id>",
+        "helper_script": "/home/sam/.openclaw/workspace/scripts/fetch_youtube_transcript.mjs",
+        "transcript_status": "available",
+        "transcript_char_count": 26510,
+        "segment_count": 689,
+        "subtitle_mode": "api",
+        "subtitle_language": "en",
+        "egress_method": "transcriptapi-api",
+        "usable_for_linkedin_generation": true,
+        "no_vtt_timestamp_markup": true,
+        "no_ytdlp_log_prefix": true
+      },
+      "source_policy": {
+        "approval_ready_content_requires_transcript": true,
+        "title_or_description_only_drafting_used": false,
+        "supporting_sources_used_as_replacement": false,
+        "youtube_frames_or_thumbnails_used": false
+      },
+      "media_delivery": {
+        "required_for_new_packets": true,
+        "attempted": true,
+        "created_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+        "mime_type": "image/png",
+        "status": "asset_created_not_delivered_to_telegram_in_one_shot_final_reply",
+        "delivery_gap": "No Telegram/media send tool was invoked in this cron turn; final plain-text reply will be delivered automatically."
+      },
+      "model_routing": {
+        "requested": "openai/gpt-5.4-mini",
+        "requested_reasoning": "low",
+        "actual": "active OpenAI Codex runtime for this isolated turn",
+        "fallback": null,
+        "note": "No non-OpenAI model used; this runtime did not expose an in-turn model selection API."
+      }
+    }
+  ],
+  "seen": [
+    {
+      "video_id": "434cG4g5KLE",
+      "title": "Stop Reading Every Line of Code",
+      "channel": "Theo / t3.gg",
+      "url": "https://www.youtube.com/watch?v=434cG4g5KLE",
+      "published_at": "2026-07-22T13:32:25Z",
+      "first_seen_at": "2026-08-04T08:43:00Z",
+      "last_checked_at": "2026-08-04T08:43:00Z",
+      "latest_run_id": "run_youtube_linkedin_20260804_0843_434cG4g5KLE",
+      "disposition": "packet_created_in_review",
+      "relevance_note": "Relevant AI/software engineering topic with a usable transcript.",
+      "transcript_status": "available",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "npm run youtube:transcript -- 434cG4g5KLE",
+      "transcript_char_count": 26510,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=434cG4g5KLE"
+      ],
+      "source_basis_note": "Draft and visual are based on TranscriptAPI transcript text for the exact requested YouTube URL; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+      "source_confidence": "sufficient",
+      "insufficient_source_context_reason": null
+    }
+  ],
+  "review_commands": [],
+  "variants": {
+    "c7W8jpsjtCc_better_hook_v1": {
+      "variant_id": "c7W8jpsjtCc_better_hook_v1",
+      "packet_id": "pkt_c7W8jpsjtCc_v1",
+      "video_id": "c7W8jpsjtCc",
+      "variant_version": 1,
+      "variant_type": "builder_insight",
+      "angle": "xAI’s Grok 4.6 looks less like a benchmark win and more like a shift toward reliable long-running agent work.",
+      "created_at": "2026-08-14T00:15:00Z",
+      "created_by_run_id": "manual_state_repair_20260814",
+      "review_status": "approved_for_manual_use",
+      "publish_status": "preflight_ready",
+      "post_text": "xAI's Grok 4.6 looks like a real step forward, but the bigger story is why it matters.\n\nIt seems better at longer agent tasks. It stays on task more reliably, works with sub-agents more naturally, and handles multi-step work without drifting as much. That matters because the real question is no longer just whether a model can answer a prompt. The question is whether it can actually finish the job.\n\nThere is still a tradeoff. Grok 4.6 appears stronger than 4.5 in real use, but it also seems less efficient with tokens, which can make it slower and more expensive. That is the hard balance frontier labs keep running into: better intelligence is useful, but only if the cost and speed stay practical.\n\nMy takeaway: xAI is closing the gap, and the competition is shifting toward reliability on real tasks, not just benchmark scores.\n\n#AI #LLMs #Agents #CodingAI #xAI",
+      "short_preview": "Grok 4.6 looks like a step forward in agent reliability, but speed and cost still matter.",
+      "hook_score": 86,
+      "usefulness_score": 89,
+      "risk_score": 13,
+      "score_notes": {
+        "hook": "Frames the release as a practical shift toward reliability rather than a raw benchmark win.",
+        "usefulness": "Explains the agent-task improvement and the cost/speed tradeoff in simple terms.",
+        "risk": "Moderate because the post is opinionated about a product release, but it stays grounded in practical implications."
+      },
+      "transcript_basis": {
+        "transcript_status": "available",
+        "transcript_char_count": 0,
+        "word_count": 0,
+        "paragraph_count": 0,
+        "subtitle_mode": "unknown",
+        "subtitle_language": "unknown",
+        "egress_method": "transcriptapi-api",
+        "source_basis_note": "Approved LinkedIn draft rebuilt from the conversation version Mr. Sam approved: simpler wording, more explanatory, and focused on the practical agent-reliability tradeoff.",
+        "source_confidence": "sufficient",
+        "key_transcript_points": [
+          "Grok 4.6 is discussed as a step forward in agent reliability and multi-step work.",
+          "The tradeoff highlighted is better intelligence versus lower efficiency, speed, and cost.",
+          "The broader theme is that the race is shifting toward agent reliability, not just benchmark position."
+        ],
+        "segment_count": 0,
+        "source_method": "transcriptapi",
+        "provider": "transcriptapi",
+        "transcriptapi_validated_at": "2026-08-14T21:18:22.983Z",
+        "transcriptapi_source_url": "https://www.youtube.com/watch?v=c7W8jpsjtCc"
+      },
+      "tags": [
+        "AI",
+        "LLMs",
+        "Agents",
+        "CodingAI",
+        "xAI"
+      ],
+      "source_confidence": "sufficient",
+      "revision_parent_variant_id": null,
+      "latest_delivery": null,
+      "source_basis_note": "Approved LinkedIn draft rebuilt from the conversation version Mr. Sam approved: simpler wording, more explanatory, and focused on the practical agent-reliability tradeoff.",
+      "approved_at": "2026-08-14T21:18:22.983Z",
+      "approved_by": "Mr. Sam",
+      "approval_command": "Approve c7W8jpsjtCc_better_hook_v1",
+      "published_at": null,
+      "linkedin_post_urn": null,
+      "linkedin_post_location": null
+    },
+    "434cG4g5KLE_builder_insight_v1": {
+      "variant_id": "434cG4g5KLE_builder_insight_v1",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "variant_version": 1,
+      "variant_type": "builder_insight",
+      "angle": "Use AI-generated disposable verification code to protect the smaller set of code that actually ships.",
+      "created_at": "2026-08-04T08:43:00Z",
+      "created_by_run_id": "run_youtube_linkedin_20260804_0843_434cG4g5KLE",
+      "review_status": "pending_review",
+      "publish_status": "not_requested",
+      "post_text": "AI-generated code changes the review problem.\n\nThe easy reaction is to ask engineers to read faster. I don’t think that is the useful lesson.\n\nThe better move is to split generated code into two categories: code that ships, and code that helps you decide what deserves to ship.\n\nThe first category still needs care. If a change touches production, security, money, infrastructure, or anything users depend on, it belongs in the normal review path.\n\nThe second category is where AI gets really interesting.\n\nGenerate the test harness. Generate the one-off debugger. Generate the custom lint rule. Generate the API probe, stress test, compiler hook, or tiny script that answers one question and can be thrown away afterwards.\n\nThat kind of code does not need to be precious. It needs to increase confidence.\n\nSo the practical shift is not “merge more AI code.”\n\nIt is: use more disposable code to protect the small amount of code that actually matters.\n\nThat is a much stronger operating model for AI-assisted engineering.\n\n#AIEngineering #SoftwareEngineering #DeveloperTools #CodeReview #Testing",
+      "short_preview": "Use disposable AI-generated code to build confidence around the production code that matters.",
+      "hook_score": 91,
+      "usefulness_score": 94,
+      "risk_score": 11,
+      "score_notes": {
+        "hook": "Starts with a clear point of view about AI-generated code review instead of mentioning the transcript or repeating the title.",
+        "usefulness": "Turns the video into an actionable engineering model: separate shippable code from disposable verification code.",
+        "risk": "Lower risk because it keeps production/security/user-impacting code in review."
+      },
+      "transcript_basis": {
+        "transcript_status": "available",
+        "transcript_char_count": 26510,
+        "word_count": 5028,
+        "paragraph_count": 77,
+        "subtitle_mode": "api",
+        "subtitle_language": "en",
+        "egress_method": "transcriptapi-api",
+        "validation_artifact": "/home/sam/.openclaw/workspace/artifacts/youtube-transcripts/434cG4g5KLE.validation.json",
+        "transcript_artifact": "/tmp/youtube-transcript-434cG4g5KLE-clean.json",
+        "transcript_artifact_sha256": "e624cc6267a837b717ad78a47872bf22dd7379f0be43a2d33672d71dacbcb04a",
+        "source_basis_note": "Draft and visual are based on TranscriptAPI transcript text for the exact requested YouTube URL; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+        "source_confidence": "sufficient",
+        "key_transcript_points": [
+          "The transcript distinguishes shipped production code from generated throwaway code used for exploration and verification.",
+          "It argues important code should still be read and verified carefully, while cheap generated code can create test harnesses, debuggers, runtimes, stress tests, lint rules, and API probes.",
+          "It frames code as a funnel of importance: lots of disposable code at the top, progressively less code moving toward carefully reviewed production changes."
+        ],
+        "segment_count": 689,
+        "source_method": "transcriptapi",
+        "provider": "transcriptapi",
+        "transcriptapi_validated_at": "2026-08-04T08:43:00Z",
+        "transcriptapi_source_url": "https://www.youtube.com/watch?v=434cG4g5KLE&t=2s"
+      },
+      "tags": [
+        "AIEngineering",
+        "SoftwareEngineering",
+        "DeveloperTools",
+        "CodeReview",
+        "Testing"
+      ],
+      "source_confidence": "sufficient",
+      "revision_parent_variant_id": null,
+      "latest_delivery": {
+        "delivered_at": "2026-08-04T08:50:57.741Z",
+        "channel": "telegram",
+        "to": "8692887396",
+        "message_id": "184",
+        "media_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "media_attached": true,
+        "delivered_by": "saara_repair_delivery",
+        "note": "Saara delivered the review packet media after the cron run reported no in-turn Telegram send tool."
+      }
+    }
+  },
+  "visual_assets": {
+    "pkt_434cG4g5KLE_v1_primary_png": {
+      "visual_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "created_at": "2026-08-04T08:43:00Z",
+      "created_by_run_id": "run_youtube_linkedin_20260804_0843_434cG4g5KLE",
+      "status": "pending_review",
+      "review_status": "pending_review",
+      "asset_type": "primary_image",
+      "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_434cG4g5KLE_v1_primary.png",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1200,
+        "height": 627
+      },
+      "generated_with_model": "local-node-builtins",
+      "prompt": "Original editorial infographic for AI code review and verification, with disposable test/probe snippets flowing through verification gates into a protected production core.",
+      "alt_text": "Original infographic of disposable code snippets flowing through testing and review gates into a protected production module.",
+      "source_notes": "Generated from transcript-derived topic only. No YouTube frames, thumbnails, channel branding, creator likenesses, logos, or copied source layouts used.",
+      "risk_notes": "Low copyright/likeness risk; image is original and abstract."
+    },
+    "pkt_c7W8jpsjtCc_v1_primary_png": {
+      "visual_asset_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+      "packet_id": "pkt_c7W8jpsjtCc_v1",
+      "video_id": "c7W8jpsjtCc",
+      "created_at": "2026-08-14T21:18:22.983Z",
+      "created_by_run_id": "manual_publish_preflight_20260814",
+      "status": "approved",
+      "review_status": "approved",
+      "asset_type": "primary_image",
+      "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_c7W8jpsjtCc_v1_primary.png",
+      "mime_type": "image/png",
+      "dimensions": {
+        "width": 1200,
+        "height": 627
+      },
+      "generated_with_model": "local-node-builtins",
+      "prompt": "Original editorial infographic for Grok 4.6 and agent reliability, with abstract blocks showing the tradeoff between stronger long-running agents and speed/cost.",
+      "alt_text": "Original infographic showing abstract blocks and workflow lines representing agent reliability versus speed and cost tradeoffs.",
+      "source_notes": "Generated from transcript-derived topic only. No YouTube frames, thumbnails, channel branding, creator likenesses, logos, or copied source layouts used.",
+      "risk_notes": "Low copyright/likeness risk; image is original and abstract.",
+      "approved_at": "2026-08-14T21:18:22.983Z",
+      "approved_by": "Mr. Sam",
+      "approval_command": "Approve visual pkt_c7W8jpsjtCc_v1_primary_png"
+    }
+  },
+  "carousels": {},
+  "phase3_packets": {
+    "pkt_c7W8jpsjtCc_v1": {
+      "packet_id": "pkt_c7W8jpsjtCc_v1",
+      "video_id": "c7W8jpsjtCc",
+      "title": "xAI just caught up (Grok 4.6 is here)",
+      "channel": "Theo / t3.gg",
+      "url": "https://www.youtube.com/watch?v=c7W8jpsjtCc",
+      "created_at": "2026-08-14T00:15:00Z",
+      "created_by_run_id": "manual_state_repair_20260814",
+      "packet_status": "approved_for_manual_use",
+      "recommendation": "Review the Grok 4.6 angle. It frames the video as an agent-reliability inflection point with a clear cost/latency tradeoff.",
+      "best_variant_id": "c7W8jpsjtCc_better_hook_v1",
+      "variant_ids": [
+        "c7W8jpsjtCc_better_hook_v1"
+      ],
+      "visual_asset_ids": [
+        "pkt_c7W8jpsjtCc_v1_primary_png"
+      ],
+      "carousel_ids": [],
+      "transcript_basis": {
+        "transcript_status": "available",
+        "transcript_char_count": 0,
+        "word_count": 0,
+        "paragraph_count": 0,
+        "subtitle_mode": "unknown",
+        "subtitle_language": "unknown",
+        "egress_method": "transcriptapi-api",
+        "source_basis_note": "Draft and visual are based on TranscriptAPI transcript text and the user-approved simplified LinkedIn copy; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+        "source_confidence": "sufficient",
+        "key_transcript_points": [
+          "Grok 4.6 is discussed as a step forward in agent reliability and multi-step work.",
+          "The tradeoff highlighted is better intelligence versus lower efficiency, speed, and cost.",
+          "The broader theme is that the race is shifting toward agent reliability, not just benchmark position."
+        ],
+        "segment_count": 0,
+        "source_method": "transcriptapi",
+        "provider": "transcriptapi",
+        "transcriptapi_validated_at": "2026-08-14T21:18:22.983Z",
+        "transcriptapi_source_url": "https://www.youtube.com/watch?v=c7W8jpsjtCc"
+      },
+      "transcript_status": "available",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "recovered_from_previous_draft",
+      "transcript_char_count": 0,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=c7W8jpsjtCc"
+      ],
+      "source_basis_note": "Draft rebuilt from the user-approved simpler LinkedIn copy and paired with a fresh original visual so the packet is ready for publish preflight.",
+      "source_confidence": "sufficient",
+      "approved_variant_id": "c7W8jpsjtCc_better_hook_v1",
+      "last_approval_at": "2026-08-14T21:18:22.983Z",
+      "approved_visual_asset_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+      "last_visual_approval_at": "2026-08-14T21:18:22.983Z",
+      "published_variant_id": "c7W8jpsjtCc_better_hook_v1",
+      "published_at": "2026-08-14T21:23:49Z"
+    },
+    "pkt_434cG4g5KLE_v1": {
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "video_id": "434cG4g5KLE",
+      "title": "Stop Reading Every Line of Code",
+      "channel": "Theo / t3.gg",
+      "url": "https://www.youtube.com/watch?v=434cG4g5KLE",
+      "created_at": "2026-08-04T08:43:00Z",
+      "created_by_run_id": "run_youtube_linkedin_20260804_0843_434cG4g5KLE",
+      "packet_status": "pending_review",
+      "recommendation": "Review the builder-insight angle. It reframes the talk as a practical split between shippable production code and disposable verification code.",
+      "best_variant_id": "434cG4g5KLE_builder_insight_v1",
+      "variant_ids": [
+        "434cG4g5KLE_builder_insight_v1"
+      ],
+      "visual_asset_ids": [
+        "pkt_434cG4g5KLE_v1_primary_png"
+      ],
+      "carousel_ids": [],
+      "transcript_basis": {
+        "transcript_status": "available",
+        "transcript_char_count": 26510,
+        "word_count": 5028,
+        "paragraph_count": 77,
+        "subtitle_mode": "api",
+        "subtitle_language": "en",
+        "egress_method": "transcriptapi-api",
+        "validation_artifact": "/home/sam/.openclaw/workspace/artifacts/youtube-transcripts/434cG4g5KLE.validation.json",
+        "transcript_artifact": "/tmp/youtube-transcript-434cG4g5KLE-clean.json",
+        "source_basis_note": "Draft and visual are based on TranscriptAPI transcript text for the exact requested YouTube URL; title, description, snippets, YouTube frames, thumbnails, and channel branding were not used as content basis.",
+        "source_confidence": "sufficient",
+        "key_transcript_points": [
+          "The transcript distinguishes shipped production code from generated throwaway code used for exploration and verification.",
+          "It argues important code should still be read and verified carefully, while cheap generated code can create test harnesses, debuggers, runtimes, stress tests, lint rules, and API probes.",
+          "It frames code as a funnel of importance: lots of disposable code at the top, progressively less code moving toward carefully reviewed production changes."
+        ],
+        "segment_count": 689,
+        "source_method": "transcriptapi",
+        "provider": "transcriptapi",
+        "transcriptapi_validated_at": "2026-08-04T08:43:00Z",
+        "transcriptapi_source_url": "https://www.youtube.com/watch?v=434cG4g5KLE&t=2s"
+      },
+      "transcript_status": "available",
+      "transcript_fallback_attempted": true,
+      "transcript_fallback_method": "npm run youtube:transcript -- 434cG4g5KLE",
+      "transcript_char_count": 26510,
+      "source_urls": [
+        "https://www.youtube.com/watch?v=434cG4g5KLE"
+      ],
+      "source_basis_note": "Draft is based on Saara’s understanding of the TranscriptAPI transcript: generated code should be split into shippable product code versus disposable verification/exploration code. The public post intentionally does not mention transcripts, captions, the video title, or source metadata.",
+      "source_confidence": "sufficient",
+      "latest_delivery": {
+        "delivered_at": "2026-08-04T08:50:57.741Z",
+        "channel": "telegram",
+        "to": "8692887396",
+        "message_id": "184",
+        "media_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+        "media_attached": true,
+        "delivered_by": "saara_repair_delivery",
+        "note": "Saara delivered the review packet media after the cron run reported no in-turn Telegram send tool."
+      },
+      "approved_variant_id": null,
+      "last_approval_at": null,
+      "approved_visual_asset_id": null,
+      "last_visual_approval_at": null,
+      "published_variant_id": null,
+      "published_at": null
+    }
+  },
+  "approval_events": [
+    {
+      "event_id": "evt_approve_c7W8jpsjtCc_better_hook_v1_20260814211822",
+      "timestamp": "2026-08-14T21:18:22.983Z",
+      "actor": "Mr. Sam",
+      "command_text": "Approve c7W8jpsjtCc_better_hook_v1",
+      "target_type": "variant",
+      "target_id": "c7W8jpsjtCc_better_hook_v1",
+      "previous_status": "pending_review",
+      "next_status": "approved_for_manual_use",
+      "notes": "User approved the simpler, more explanatory LinkedIn draft."
+    },
+    {
+      "event_id": "evt_approve_pkt_c7W8jpsjtCc_v1_primary_png_20260814211822",
+      "timestamp": "2026-08-14T21:18:22.983Z",
+      "actor": "Mr. Sam",
+      "command_text": "Approve visual pkt_c7W8jpsjtCc_v1_primary_png",
+      "target_type": "visual",
+      "target_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+      "previous_status": "pending_review",
+      "next_status": "approved",
+      "notes": "Fresh original raster visual created for publish readiness."
+    }
+  ],
+  "publish_events": [
+    {
+      "event_id": "publish_success_20260814_212349_c7W8jpsjtCc_better_hook_v1",
+      "type": "published",
+      "created_at": "2026-08-14T21:23:49Z",
+      "timestamp": "2026-08-14T21:23:49Z",
+      "actor": "Mr. Sam",
+      "command_text": "Publish c7W8jpsjtCc_better_hook_v1 confirmed",
+      "target_type": "variant",
+      "target_id": "c7W8jpsjtCc_better_hook_v1",
+      "packet_id": "pkt_c7W8jpsjtCc_v1",
+      "previous_status": "preflight_ready",
+      "next_status": "published",
+      "post_called": true,
+      "image_upload_called": true,
+      "image_urn": "urn:li:image:D4E10AQGy97Z4nPviXQ",
+      "linkedin_post_urn": "urn:li:share:7494141756821860353",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7494141756821860353",
+      "post_status": 201,
+      "notes": "Published through Maton LinkedIn API after explicit confirmed command. Payload used uploaded image media and omitted YouTube article link card."
+    }
+  ],
+  "workflow": {
+    "name": "youtube-linkedin-daily-digest",
+    "display_name": "YouTube to LinkedIn daily digest",
+    "status": "production",
+    "canonical_state_path": "/home/sam/.openclaw/workspace/state/youtube_linkedin_workflow.json",
+    "legacy_state_paths": [
+      "/home/sam/.openclaw/workspace/state/youtube_linkedin_phase1.json"
+    ],
+    "delivery": {
+      "channel": "telegram",
+      "to": "8692887396"
+    },
+    "transcript_provider": {
+      "source_method": "transcriptapi",
+      "provider": "transcriptapi",
+      "helper_path": "/home/sam/.openclaw/workspace/scripts/fetch_youtube_transcript.mjs",
+      "command": "npm run youtube:transcript -- <youtube-url-or-video-id>",
+      "setup_doc": "/home/sam/.openclaw/workspace/docs/transcriptapi_setup.md",
+      "required_env": "TRANSCRIPT_API_KEY",
+      "fallback_allowed": false,
+      "forbidden_fallbacks": [
+        "tailscale",
+        "yt-dlp",
+        "browser-cookies",
+        "youtube-transcript-generator"
+      ],
+      "validated_video_id": "434cG4g5KLE",
+      "validated_at": "2026-07-23T15:07:00Z",
+      "validation_result": {
+        "source_method": "transcriptapi",
+        "transcript_status": "available",
+        "transcript_char_count": 26510,
+        "title": "Stop Reading Every Line of Code"
+      }
+    },
+    "publishing_policy": {
+      "automatic_publishing_enabled": false,
+      "linkedin_scheduling_enabled": false,
+      "linkedin_connection_status": "verified",
+      "required_before_post": [
+        "approved variant",
+        "approved visual or publishable raster image",
+        "read-only LinkedIn connection verification",
+        "exact endpoint and body preview",
+        "Publish dry-run without POST",
+        "explicit current confirmation from Mr. Sam using Publish {variant_id} confirmed"
+      ],
+      "youtube_article_cards_forbidden": true,
+      "publish_uses_uploaded_image_media": true
+    },
+    "reset_at": "2026-07-23T15:07:00Z",
+    "documentation_path": "/home/sam/.openclaw/workspace/docs/youtube_linkedin_workflow.md",
+    "mode": "daily_digest_only",
+    "legacy_names": [
+      "youtube-linkedin-review-publish",
+      "youtube-linkedin-preview-publish"
+    ],
+    "source_channels_path": "youtube_video_watchlist.channels",
+    "active_scheduler": {
+      "kind": "systemd_user_timer",
+      "timer_name": "openclaw-youtube-linkedin-digest.timer",
+      "service_name": "openclaw-youtube-linkedin-digest.service",
+      "schedule": "*-*-* 06:00:00 UTC",
+      "randomized_delay": "none",
+      "persistent": false,
+      "command": "npm --silent run youtube:digest:send"
+    },
+    "daily_digest": {
+      "mode": "digest_only",
+      "generator_command": "npm --silent run youtube:digest",
+      "sender_command": "npm --silent run youtube:digest:send",
+      "packet_generation": "manual_only",
+      "thumbnail_storage": "none"
+    },
+    "manual_commands": {
+      "save_video": "npm --silent run youtube:digest -- --save-video <video-id-or-url>",
+      "unsave_video": "npm --silent run youtube:digest -- --unsave-video <video-id-or-url>",
+      "status_video": "npm --silent run youtube:digest -- --status-video <video-id-or-url>"
+    },
+    "legacy_openclaw_cron": {
+      "name": "youtube-linkedin-review-publish",
+      "aliases": [
+        "youtube-linkedin-preview-publish"
+      ],
+      "cron_job_id": "fe974333-bc3a-484a-aba3-679aa3102702",
+      "status": "removed",
+      "removed_at": "2026-08-10",
+      "acceptable_states": [
+        "removed",
+        "disabled"
+      ],
+      "former_execution_agent_id": "linkedinengine"
+    }
+  },
+  "runtime": {
+    "approval_state_machine_enabled": true,
+    "visual_and_carousel_assets_enabled": true,
+    "linkedin_publish_gate_enabled": true,
+    "scheduling_enabled": false,
+    "transcript_first_content_enabled": true,
+    "transcript_required_for_approval_ready_packets": true,
+    "transcript_provider": "transcriptapi",
+    "transcript_helper_path": "/home/sam/.openclaw/workspace/scripts/fetch_youtube_transcript.mjs",
+    "transcript_helper_command": "npm run youtube:transcript -- <youtube-url-or-video-id>",
+    "transcript_fallback_helper_enabled": false,
+    "transcript_fallback_packages": [],
+    "no_transcript_supporting_sources_only_packets_forbidden": true,
+    "thumbnail_assets_enabled": true,
+    "visual_generator": {
+      "helper_path": "/home/sam/.openclaw/workspace/scripts/create_youtube_linkedin_visual.mjs",
+      "command": "npm run youtube:visual -- --packet-id <packet-id> --title <video-title> --topic <topic> --channel <channel> --out <png-path>",
+      "output_mime_type": "image/png",
+      "output_size": "1200x627",
+      "requires_root_packages": false,
+      "requires_external_converters": false,
+      "fallback_for_missing_tools": [
+        "pnmtopng",
+        "ImageMagick",
+        "rsvg-convert",
+        "Python imaging libraries"
+      ]
+    },
+    "relevant_tags_required": true,
+    "publish_uses_uploaded_image_media": true,
+    "youtube_article_cards_forbidden": true,
+    "publishable_raster_thumbnail_required": true,
+    "controller_agent_id": "main",
+    "execution_agent_id": "linkedinengine",
+    "command_dispatcher_agent_id": "main",
+    "latest_change": "Repaired YouTube-to-LinkedIn workflow scaffolding after state drift or partial reset.",
+    "updated_at": "2026-08-16T19:03:59.248Z",
+    "automatic_packet_generation_enabled": false,
+    "automatic_thumbnail_generation_enabled": false,
+    "packet_generation_trigger": "manual_only",
+    "thumbnail_storage_policy": "do_not_store_youtube_thumbnails"
+  },
+  "phase2_runtime": {
+    "enabled": true,
+    "channels": [
+      "Theo / t3.gg",
+      "ThePrimeTime",
+      "Fireship"
+    ],
+    "topic_focus": [
+      "data science",
+      "software engineering",
+      "AI",
+      "tech"
+    ],
+    "max_draft_packets_per_day": 0,
+    "max_variants_per_packet": 3,
+    "variant_types": [
+      "builder_insight",
+      "hiring_signal",
+      "contrarian_take"
+    ],
+    "scores": [
+      "hook_score",
+      "usefulness_score",
+      "risk_score"
+    ],
+    "publishing_enabled": false,
+    "scheduling_enabled": false,
+    "models": {
+      "gating_and_scoring": "openai/gpt-5.4-nano when available; otherwise cheapest capable OpenAI model",
+      "drafting_and_revisions": "openai/gpt-5.5 with medium reasoning",
+      "visual_planning_and_publish_preflight": "openai/gpt-5.5 with medium reasoning"
+    },
+    "telegram_delivery": {
+      "channel": "telegram",
+      "to": "8692887396",
+      "method": "openclaw_announce_delivery"
+    },
+    "automatic_packet_generation_enabled": false,
+    "mode": "manual_drafts_only_after_digest"
+  },
+  "phase3_runtime": {
+    "enabled": true,
+    "scope": "original visuals and carousel planning for Telegram review packets",
+    "visuals_enabled": false,
+    "carousels_enabled": true,
+    "linkedin_publishing_enabled": false,
+    "linkedin_scheduling_enabled": false,
+    "copyright_rules": [
+      "do not use YouTube frames",
+      "do not use YouTube screenshots",
+      "do not use thumbnails",
+      "do not use channel branding or logos",
+      "do not use creator likenesses",
+      "do not copy visual layouts from source videos"
+    ],
+    "automatic_visual_generation_enabled": false,
+    "mode": "manual_packet_visuals_only"
+  },
+  "phase4_runtime": {
+    "enabled": true,
+    "scope": "approval state machine for packets, variants, visuals, and carousel items",
+    "linkedin_publishing_enabled": false,
+    "linkedin_scheduling_enabled": false,
+    "phase4_commands": [
+      "Status {packet_id}",
+      "Archive {packet_id}",
+      "Approve visual {visual_asset_id}",
+      "Reject visual {visual_asset_id}",
+      "Revise visual {visual_asset_id}: {instruction}"
+    ]
+  },
+  "phase5_runtime": {
+    "enabled": true,
+    "scope": "guarded LinkedIn publishing gate",
+    "automatic_publishing_enabled": false,
+    "linkedin_publishing_gate_enabled": true,
+    "linkedin_scheduling_enabled": false,
+    "linkedin_connection_status": "verified",
+    "linkedin_connection_checked_at": "2026-08-14T21:18:22.983Z",
+    "linkedin_post_endpoint": "/linkedin/rest/posts",
+    "publish_commands": [
+      "Publish dry-run {variant_id}",
+      "Prepare publish {variant_id}",
+      "Publish {variant_id}",
+      "Cancel publish {variant_id}"
+    ],
+    "required_publish_checks": [
+      "approved_variant",
+      "approved_visual_or_publishable_raster_image",
+      "read_only_linkedin_connection_verified",
+      "exact_payload_preview_current_for_same_variant",
+      "publish_dry_run_completed_without_post",
+      "explicit_publish_variant_confirmed_command"
+    ],
+    "next_publish_blocker": null,
+    "prepared_publish_preview": {
+      "prepared_at": "2026-08-14T21:18:22.983Z",
+      "status": "published",
+      "command_text": "Prepare publish c7W8jpsjtCc_better_hook_v1",
+      "variant_id": "c7W8jpsjtCc_better_hook_v1",
+      "packet_id": "pkt_c7W8jpsjtCc_v1",
+      "endpoint": "/linkedin/rest/posts",
+      "method": "POST",
+      "headers": {
+        "LinkedIn-Version": "202608",
+        "Content-Type": "application/json",
+        "X-Restli-Protocol-Version": "2.0.0"
+      },
+      "author": "urn:li:person:WRCnY_7Us7",
+      "request_body_template": {
+        "author": "urn:li:person:WRCnY_7Us7",
+        "lifecycleState": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "commentary": "xAI's Grok 4.6 looks like a real step forward, but the bigger story is why it matters.\n\nIt seems better at longer agent tasks. It stays on task more reliably, works with sub-agents more naturally, and handles multi-step work without drifting as much. That matters because the real question is no longer just whether a model can answer a prompt. The question is whether it can actually finish the job.\n\nThere is still a tradeoff. Grok 4.6 appears stronger than 4.5 in real use, but it also seems less efficient with tokens, which can make it slower and more expensive. That is the hard balance frontier labs keep running into: better intelligence is useful, but only if the cost and speed stay practical.\n\nMy takeaway: xAI is closing the gap, and the competition is shifting toward reliability on real tasks, not just benchmark scores.\n\n#AI #LLMs #Agents #CodingAI #xAI",
+        "distribution": {
+          "feedDistribution": "MAIN_FEED"
+        },
+        "content": {
+          "media": {
+            "id": "urn:li:image:D4E10AQGy97Z4nPviXQ",
+            "altText": "Original infographic showing abstract blocks and workflow lines representing agent reliability versus speed and cost tradeoffs."
+          }
+        }
+      },
+      "request_body_is_exact": true,
+      "exact_payload_blocker": null,
+      "approved_variant": true,
+      "approved_visual": true,
+      "visual_asset": {
+        "visual_asset_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+        "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_c7W8jpsjtCc_v1_primary.png",
+        "mime_type": "image/png",
+        "alt_text": "Original infographic showing abstract blocks and workflow lines representing agent reliability versus speed and cost tradeoffs.",
+        "review_status": "approved",
+        "upload_required_before_post": true
+      },
+      "linkedin_connection_check": {
+        "checked_at": "2026-08-14T21:23:48Z",
+        "method": "GET",
+        "endpoint": "/linkedin/rest/me",
+        "http_status": 200,
+        "linkedin_version": "202608",
+        "result": "verified"
+      },
+      "safety": "Published successfully through Maton LinkedIn API after explicit current confirmation.",
+      "next_command": "None"
+    },
+    "last_publish_dry_run": {
+      "prepared_at": "2026-08-14T21:18:22.983Z",
+      "status": "preflight_ready",
+      "command_text": "Prepare publish c7W8jpsjtCc_better_hook_v1",
+      "variant_id": "c7W8jpsjtCc_better_hook_v1",
+      "packet_id": "pkt_c7W8jpsjtCc_v1",
+      "endpoint": "/linkedin/rest/posts",
+      "method": "POST",
+      "headers": {
+        "LinkedIn-Version": "202506",
+        "Content-Type": "application/json",
+        "X-Restli-Protocol-Version": "2.0.0"
+      },
+      "author": "urn:li:person:WRCnY_7Us7",
+      "request_body_template": {
+        "author": "urn:li:person:WRCnY_7Us7",
+        "lifecycleState": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "commentary": "xAI's Grok 4.6 looks like a real step forward, but the bigger story is why it matters.\n\nIt seems better at longer agent tasks. It stays on task more reliably, works with sub-agents more naturally, and handles multi-step work without drifting as much. That matters because the real question is no longer just whether a model can answer a prompt. The question is whether it can actually finish the job.\n\nThere is still a tradeoff. Grok 4.6 appears stronger than 4.5 in real use, but it also seems less efficient with tokens, which can make it slower and more expensive. That is the hard balance frontier labs keep running into: better intelligence is useful, but only if the cost and speed stay practical.\n\nMy takeaway: xAI is closing the gap, and the competition is shifting toward reliability on real tasks, not just benchmark scores.\n\n#AI #LLMs #Agents #CodingAI #xAI",
+        "distribution": {
+          "feedDistribution": "MAIN_FEED"
+        },
+        "content": {
+          "media": {
+            "id": "<uploaded LinkedIn image URN from approved visual asset>",
+            "altText": "Original infographic showing abstract blocks and workflow lines representing agent reliability versus speed and cost tradeoffs."
+          }
+        }
+      },
+      "request_body_is_exact": true,
+      "exact_payload_blocker": null,
+      "approved_variant": true,
+      "approved_visual": true,
+      "visual_asset": {
+        "visual_asset_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+        "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_c7W8jpsjtCc_v1_primary.png",
+        "mime_type": "image/png",
+        "alt_text": "Original infographic showing abstract blocks and workflow lines representing agent reliability versus speed and cost tradeoffs.",
+        "review_status": "approved",
+        "upload_required_before_post": true
+      },
+      "linkedin_connection_check": {
+        "checked_at": "2026-08-14T21:23:48Z",
+        "method": "GET",
+        "endpoint": "/linkedin/rest/me",
+        "http_status": 200,
+        "linkedin_version": "202608",
+        "result": "verified"
+      },
+      "safety": "Published successfully through Maton LinkedIn API after explicit current confirmation.",
+      "next_command": "None",
+      "uploaded_image": {
+        "image_urn": "urn:li:image:D4E10AQGy97Z4nPviXQ",
+        "source_asset_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+        "source_path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_c7W8jpsjtCc_v1_primary.png",
+        "mime_type": "image/png",
+        "uploaded_at": "2026-08-14T21:23:49Z",
+        "initialize_status": 200,
+        "upload_status": 201
+      },
+      "published_at": "2026-08-14T21:23:49Z",
+      "linkedin_post_urn": "urn:li:share:7494141756821860353",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7494141756821860353"
+    },
+    "last_variant_approval": null,
+    "last_prepare_publish": {
+      "prepared_at": "2026-08-14T21:18:22.983Z",
+      "status": "published",
+      "command_text": "Prepare publish c7W8jpsjtCc_better_hook_v1",
+      "variant_id": "c7W8jpsjtCc_better_hook_v1",
+      "packet_id": "pkt_c7W8jpsjtCc_v1",
+      "endpoint": "/linkedin/rest/posts",
+      "method": "POST",
+      "headers": {
+        "LinkedIn-Version": "202608",
+        "Content-Type": "application/json",
+        "X-Restli-Protocol-Version": "2.0.0"
+      },
+      "author": "urn:li:person:WRCnY_7Us7",
+      "request_body_template": {
+        "author": "urn:li:person:WRCnY_7Us7",
+        "lifecycleState": "PUBLISHED",
+        "visibility": "PUBLIC",
+        "commentary": "xAI's Grok 4.6 looks like a real step forward, but the bigger story is why it matters.\n\nIt seems better at longer agent tasks. It stays on task more reliably, works with sub-agents more naturally, and handles multi-step work without drifting as much. That matters because the real question is no longer just whether a model can answer a prompt. The question is whether it can actually finish the job.\n\nThere is still a tradeoff. Grok 4.6 appears stronger than 4.5 in real use, but it also seems less efficient with tokens, which can make it slower and more expensive. That is the hard balance frontier labs keep running into: better intelligence is useful, but only if the cost and speed stay practical.\n\nMy takeaway: xAI is closing the gap, and the competition is shifting toward reliability on real tasks, not just benchmark scores.\n\n#AI #LLMs #Agents #CodingAI #xAI",
+        "distribution": {
+          "feedDistribution": "MAIN_FEED"
+        },
+        "content": {
+          "media": {
+            "id": "urn:li:image:D4E10AQGy97Z4nPviXQ",
+            "altText": "Original infographic showing abstract blocks and workflow lines representing agent reliability versus speed and cost tradeoffs."
+          }
+        }
+      },
+      "request_body_is_exact": true,
+      "exact_payload_blocker": null,
+      "approved_variant": true,
+      "approved_visual": true,
+      "visual_asset": {
+        "visual_asset_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+        "path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_c7W8jpsjtCc_v1_primary.png",
+        "mime_type": "image/png",
+        "alt_text": "Original infographic showing abstract blocks and workflow lines representing agent reliability versus speed and cost tradeoffs.",
+        "review_status": "approved",
+        "upload_required_before_post": true
+      },
+      "linkedin_connection_check": {
+        "checked_at": "2026-08-14T21:23:48Z",
+        "method": "GET",
+        "endpoint": "/linkedin/rest/me",
+        "http_status": 200,
+        "linkedin_version": "202608",
+        "result": "verified"
+      },
+      "safety": "Published successfully through Maton LinkedIn API after explicit current confirmation.",
+      "next_command": "None",
+      "uploaded_image": {
+        "image_urn": "urn:li:image:D4E10AQGy97Z4nPviXQ",
+        "source_asset_id": "pkt_c7W8jpsjtCc_v1_primary_png",
+        "source_path": "/home/sam/.openclaw/workspace/assets/youtube-linkedin/thumbnails/pkt_c7W8jpsjtCc_v1_primary.png",
+        "mime_type": "image/png",
+        "uploaded_at": "2026-08-14T21:23:49Z",
+        "initialize_status": 200,
+        "upload_status": 201
+      },
+      "published_at": "2026-08-14T21:23:49Z",
+      "linkedin_post_urn": "urn:li:share:7494141756821860353",
+      "linkedin_post_location": "/posts/urn%3Ali%3Ashare%3A7494141756821860353"
+    },
+    "last_published_variant_id": "c7W8jpsjtCc_better_hook_v1",
+    "last_published_at": "2026-08-14T21:23:49Z",
+    "last_linkedin_post_urn": "urn:li:share:7494141756821860353",
+    "linkedin_connection_check": {
+      "method": "GET",
+      "endpoint": "/linkedin/rest/me",
+      "http_status": 200,
+      "result": "LinkedIn connection verified through Maton gateway; profile identifiers intentionally not stored in workflow state.",
+      "secret_redacted": true,
+      "pii_redacted": true
+    }
+  },
+  "runtime_audit_notes": [
+    {
+      "timestamp": "2026-08-16T19:02:09.058Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 1 new videos and 0 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-15T18:13:23.862Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 1 new videos and 0 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-15T00:02:09.953Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 4 new videos and 0 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-14T21:50:28.146Z",
+      "actor": "saara",
+      "action": "youtube_linkedin_scheduler_metadata_cleanup",
+      "notes": "Renamed the active scheduled job to youtube-linkedin-daily-digest, moved youtube-linkedin-review-publish under legacy OpenClaw cron metadata, and removed duplicate scheduler command fields from runtime sections."
+    },
+    {
+      "timestamp": "2026-08-14T00:15:00Z",
+      "actor": "saara",
+      "action": "manual_draft_state_repair",
+      "notes": "Recovered packet pkt_c7W8jpsjtCc_v1 and variant c7W8jpsjtCc_better_hook_v1 from the previous draft so the manual review/publish workflow can continue from state instead of relying on chat history."
+    },
+    {
+      "timestamp": "2026-08-14T00:02:09.872Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 3 new videos and 0 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-13T10:52:21.250Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 0 new videos and 8 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-13T00:04:15.961Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 0 new videos and 0 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-12T00:05:17.045Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 0 new videos and 0 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-11T00:02:16.719Z",
+      "actor": "saara",
+      "action": "daily_youtube_digest_run",
+      "notes": "Digest checked 3 channels, reported 0 new videos and 0 missout videos. No packets, drafts, or thumbnails were created."
+    },
+    {
+      "timestamp": "2026-08-04T09:52:05.978Z",
+      "actor": "saara",
+      "action": "switch_to_daily_digest_manual_drafts",
+      "notes": "Cron no longer auto-generates LinkedIn packets, variants, thumbnails, or visuals. It sends a daily digest from deterministic YouTube RSS feeds for Theo/t3.gg, ThePrimeTime, and Fireship. Mr. Sam must explicitly save or request a draft for a specific video."
+    },
+    {
+      "timestamp": "2026-08-04T08:50:57.741Z",
+      "actor": "saara",
+      "action": "telegram_packet_delivery_repair",
+      "notes": "Delivered packet pkt_434cG4g5KLE_v1 and PNG visual to Telegram message 184 after successful manual stability-mode cron run."
+    },
+    {
+      "timestamp": "2026-08-04T08:48:21.837Z",
+      "actor": "saara",
+      "action": "cron_stability_mode_no_archive_reads",
+      "notes": "Future stability-mode cron runs must not read archive files or historical packet bodies; if no current candidate/transcript is found quickly, append a compact skip event and finish."
+    },
+    {
+      "timestamp": "2026-08-04T08:42:38.223Z",
+      "actor": "saara",
+      "action": "cron_stability_mode_fix",
+      "notes": "Live cron payload now uses openai/gpt-5.4-mini with low reasoning and a bounded one-packet production pass. TranscriptAPI-only and no-auto-publish rules remain unchanged."
+    },
+    {
+      "timestamp": "2026-07-27T21:50:00Z",
+      "actor": "saara",
+      "action": "cron_visual_fallback_fix",
+      "notes": "Latest manual cron run reached tool execution and failed after probing missing pnmtopng. Added Node built-in PNG helper and documented that missing optional converters must use the helper instead of failing the workflow."
+    },
+    {
+      "timestamp": "2026-07-23T15:07:00Z",
+      "actor": "saara",
+      "action": "transcriptapi_only_reset",
+      "notes": "Active workflow state reset. Old Tailscale/yt-dlp transcript path, generated artifacts, and local youtube-transcript-generator skills removed from active workspace paths."
+    }
+  ],
+  "events": [
+    {
+      "timestamp": "2026-08-04T08:50:57.741Z",
+      "actor": "saara",
+      "type": "review_packet_delivery_repair",
+      "packet_id": "pkt_434cG4g5KLE_v1",
+      "variant_id": "434cG4g5KLE_builder_insight_v1",
+      "visual_asset_id": "pkt_434cG4g5KLE_v1_primary_png",
+      "channel": "telegram",
+      "to": "8692887396",
+      "message_id": "184",
+      "media_attached": true
+    },
+    {
+      "timestamp": "2026-08-15T17:37:23.521Z",
+      "actor": "saara",
+      "type": "youtube_video_saved_for_future_posting",
+      "video_id": "E7la7-dtfVM",
+      "note": ""
+    }
+  ],
+  "youtube_video_watchlist": {
+    "mode": "daily_digest_only",
+    "packet_generation": "manual_only",
+    "thumbnail_storage": "do_not_store_youtube_thumbnails",
+    "channels": [
+      {
+        "key": "theo_t3gg",
+        "name": "Theo / t3.gg",
+        "handle": "@t3dotgg",
+        "channel_id": "UCbRP3c757lWg9M-U7TyEkXA",
+        "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCbRP3c757lWg9M-U7TyEkXA"
+      },
+      {
+        "key": "theprimetime",
+        "name": "ThePrimeTime",
+        "handle": "@ThePrimeTimeagen",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ"
+      },
+      {
+        "key": "fireship",
+        "name": "Fireship",
+        "handle": "@Fireship",
+        "channel_id": "UCsBjURrPoezykLs9EqgamOA",
+        "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA"
+      }
+    ],
+    "discovered_videos": {
+      "P2Jb1lOkzCE": {
+        "video_id": "P2Jb1lOkzCE",
+        "title": "Skill Descriptions Are Tricky",
+        "channel_key": "theo_t3gg",
+        "channel": "Theo / t3.gg",
+        "channel_id": "UCbRP3c757lWg9M-U7TyEkXA",
+        "channel_handle": "@t3dotgg",
+        "url": "https://www.youtube.com/shorts/P2Jb1lOkzCE",
+        "published_at": "2026-08-11T17:00:28+00:00",
+        "updated_at": "2026-08-11T18:53:54+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-14T00:02:09.872Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "e1snsuY4lTI": {
+        "video_id": "e1snsuY4lTI",
+        "title": "I Fixed Claude Without Touching Any Code",
+        "channel_key": "theo_t3gg",
+        "channel": "Theo / t3.gg",
+        "channel_id": "UCbRP3c757lWg9M-U7TyEkXA",
+        "channel_handle": "@t3dotgg",
+        "url": "https://www.youtube.com/watch?v=e1snsuY4lTI",
+        "published_at": "2026-08-11T06:37:32+00:00",
+        "updated_at": "2026-08-13T04:30:42+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-14T00:02:09.872Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "tHsXzjkl1Dc": {
+        "video_id": "tHsXzjkl1Dc",
+        "title": "Pokemon Slop Demo Review",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/shorts/tHsXzjkl1Dc",
+        "published_at": "2026-08-12T13:02:09+00:00",
+        "updated_at": "2026-08-13T07:03:24+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-15T00:02:09.953Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "89_0P8UypsY": {
+        "video_id": "89_0P8UypsY",
+        "title": "AI Roasted Chats",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/shorts/89_0P8UypsY",
+        "published_at": "2026-08-11T13:03:09+00:00",
+        "updated_at": "2026-08-12T09:41:49+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-14T00:02:09.872Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "lnMnXsmxoHc": {
+        "video_id": "lnMnXsmxoHc",
+        "title": "He Saved Us All",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/watch?v=lnMnXsmxoHc",
+        "published_at": "2026-08-11T13:00:11+00:00",
+        "updated_at": "2026-08-12T16:35:51+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-14T00:02:09.872Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "aEtlWql1N5M": {
+        "video_id": "aEtlWql1N5M",
+        "title": "A feet of engineering",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/shorts/aEtlWql1N5M",
+        "published_at": "2026-08-10T13:03:04+00:00",
+        "updated_at": "2026-08-11T19:59:27+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-13T10:52:21.250Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "G55HSGpuh1M": {
+        "video_id": "G55HSGpuh1M",
+        "title": "Meta's new model wants \"deep access\" to your personal life...",
+        "channel_key": "fireship",
+        "channel": "Fireship",
+        "channel_id": "UCsBjURrPoezykLs9EqgamOA",
+        "channel_handle": "@Fireship",
+        "url": "https://www.youtube.com/watch?v=G55HSGpuh1M",
+        "published_at": "2026-08-12T18:29:41+00:00",
+        "updated_at": "2026-08-13T07:17:26+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-15T18:13:23.862Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "aB5LGrHISqY": {
+        "video_id": "aB5LGrHISqY",
+        "title": "I spent 3 days at MIT... the robot hype is worse than you think",
+        "channel_key": "fireship",
+        "channel": "Fireship",
+        "channel_id": "UCsBjURrPoezykLs9EqgamOA",
+        "channel_handle": "@Fireship",
+        "url": "https://www.youtube.com/watch?v=aB5LGrHISqY",
+        "published_at": "2026-08-11T16:10:08+00:00",
+        "updated_at": "2026-08-12T07:37:27+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-13T10:52:21.250Z",
+        "last_checked_at": "2026-08-14T00:02:09.872Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_reported_at": "2026-08-13T10:52:21.250Z",
+        "last_digest_id": "youtube_digest_20260813T105221Z",
+        "report_count": 1
+      },
+      "c7W8jpsjtCc": {
+        "video_id": "c7W8jpsjtCc",
+        "title": "xAI just caught up (Grok 4.6 is here)",
+        "channel_key": "theo_t3gg",
+        "channel": "Theo / t3.gg",
+        "channel_id": "UCbRP3c757lWg9M-U7TyEkXA",
+        "channel_handle": "@t3dotgg",
+        "url": "https://www.youtube.com/watch?v=c7W8jpsjtCc",
+        "published_at": "2026-08-13T11:36:23+00:00",
+        "updated_at": "2026-08-14T10:31:01+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-14T00:02:09.872Z",
+        "last_checked_at": "2026-08-15T18:13:23.862Z",
+        "packet_id": "pkt_c7W8jpsjtCc_v1",
+        "draft_requested_at": "2026-08-14T00:15:00Z",
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-14T00:02:09.872Z",
+        "last_reported_at": "2026-08-14T00:02:09.872Z",
+        "last_digest_id": "youtube_digest_20260814T000209Z",
+        "report_count": 1
+      },
+      "-TVL8F-DvlQ": {
+        "video_id": "-TVL8F-DvlQ",
+        "title": "Fable Hates C",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/shorts/-TVL8F-DvlQ",
+        "published_at": "2026-08-13T13:02:15+00:00",
+        "updated_at": "2026-08-14T11:18:08+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-14T00:02:09.872Z",
+        "last_checked_at": "2026-08-15T18:13:23.862Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-14T00:02:09.872Z",
+        "last_reported_at": "2026-08-14T00:02:09.872Z",
+        "last_digest_id": "youtube_digest_20260814T000209Z",
+        "report_count": 1
+      },
+      "UyIiAIif5R0": {
+        "video_id": "UyIiAIif5R0",
+        "title": "I Was Right?!",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/watch?v=UyIiAIif5R0",
+        "published_at": "2026-08-13T13:00:34+00:00",
+        "updated_at": "2026-08-14T19:24:11+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-14T00:02:09.872Z",
+        "last_checked_at": "2026-08-15T18:13:23.862Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-14T00:02:09.872Z",
+        "last_reported_at": "2026-08-14T00:02:09.872Z",
+        "last_digest_id": "youtube_digest_20260814T000209Z",
+        "report_count": 1
+      },
+      "iWh6Khkv_Es": {
+        "video_id": "iWh6Khkv_Es",
+        "title": "Elon Spoiled Grok 4.7 Already",
+        "channel_key": "theo_t3gg",
+        "channel": "Theo / t3.gg",
+        "channel_id": "UCbRP3c757lWg9M-U7TyEkXA",
+        "channel_handle": "@t3dotgg",
+        "url": "https://www.youtube.com/shorts/iWh6Khkv_Es",
+        "published_at": "2026-08-14T22:00:21+00:00",
+        "updated_at": "2026-08-15T14:39:47+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-15T00:02:09.953Z",
+        "last_checked_at": "2026-08-16T19:02:09.058Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_digest_id": "youtube_digest_20260815T000209Z",
+        "report_count": 1
+      },
+      "Be-NqsW-wuk": {
+        "video_id": "Be-NqsW-wuk",
+        "title": "Claude watermarks your code now",
+        "channel_key": "theo_t3gg",
+        "channel": "Theo / t3.gg",
+        "channel_id": "UCbRP3c757lWg9M-U7TyEkXA",
+        "channel_handle": "@t3dotgg",
+        "url": "https://www.youtube.com/watch?v=Be-NqsW-wuk",
+        "published_at": "2026-08-14T10:11:39+00:00",
+        "updated_at": "2026-08-14T11:15:48+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-15T00:02:09.953Z",
+        "last_checked_at": "2026-08-16T19:02:09.058Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_digest_id": "youtube_digest_20260815T000209Z",
+        "report_count": 1
+      },
+      "6oBdGwCyt54": {
+        "video_id": "6oBdGwCyt54",
+        "title": "Youtubes WORST feature",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/shorts/6oBdGwCyt54",
+        "published_at": "2026-08-14T13:13:37+00:00",
+        "updated_at": "2026-08-15T14:15:08+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-15T00:02:09.953Z",
+        "last_checked_at": "2026-08-16T19:02:09.058Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_digest_id": "youtube_digest_20260815T000209Z",
+        "report_count": 1
+      },
+      "E7la7-dtfVM": {
+        "video_id": "E7la7-dtfVM",
+        "title": "This new startup can query anywhere you've been...",
+        "channel_key": "fireship",
+        "channel": "Fireship",
+        "channel_id": "UCsBjURrPoezykLs9EqgamOA",
+        "channel_handle": "@Fireship",
+        "url": "https://www.youtube.com/watch?v=E7la7-dtfVM",
+        "published_at": "2026-08-14T17:44:59+00:00",
+        "updated_at": "2026-08-15T14:07:14+00:00",
+        "source": "youtube_rss",
+        "status": "saved_for_future_posting",
+        "first_discovered_at": "2026-08-15T00:02:09.953Z",
+        "last_checked_at": "2026-08-16T19:02:09.058Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": true,
+        "first_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_reported_at": "2026-08-15T00:02:09.953Z",
+        "last_digest_id": "youtube_digest_20260815T000209Z",
+        "report_count": 1,
+        "last_saved_action_at": "2026-08-15T17:37:23.521Z"
+      },
+      "W4K1kG0Dnk8": {
+        "video_id": "W4K1kG0Dnk8",
+        "title": "Escaping the Sandbox is easy",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/shorts/W4K1kG0Dnk8",
+        "published_at": "2026-08-15T13:02:08+00:00",
+        "updated_at": "2026-08-16T07:40:13+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-15T18:13:23.862Z",
+        "last_checked_at": "2026-08-16T19:02:09.058Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-15T18:13:23.862Z",
+        "last_reported_at": "2026-08-15T18:13:23.862Z",
+        "last_digest_id": "youtube_digest_20260815T181323Z",
+        "report_count": 1
+      },
+      "vp4CuUZfcD8": {
+        "video_id": "vp4CuUZfcD8",
+        "title": "Meccha chameleon hack",
+        "channel_key": "theprimetime",
+        "channel": "ThePrimeTime",
+        "channel_id": "UCUyeluBRhGPCW4rPe_UvBZQ",
+        "channel_handle": "@ThePrimeTimeagen",
+        "url": "https://www.youtube.com/shorts/vp4CuUZfcD8",
+        "published_at": "2026-08-16T13:02:26+00:00",
+        "updated_at": "2026-08-16T13:09:56+00:00",
+        "source": "youtube_rss",
+        "status": "discovered",
+        "first_discovered_at": "2026-08-16T19:02:09.058Z",
+        "last_checked_at": "2026-08-16T19:02:09.058Z",
+        "packet_id": null,
+        "draft_requested_at": null,
+        "saved_for_future_posting": false,
+        "first_reported_at": "2026-08-16T19:02:09.058Z",
+        "last_reported_at": "2026-08-16T19:02:09.058Z",
+        "last_digest_id": "youtube_digest_20260816T190209Z",
+        "report_count": 1
+      }
+    },
+    "saved_for_future_posting": [
+      "E7la7-dtfVM"
+    ],
+    "digests": [
+      {
+        "digest_id": "youtube_digest_20260811T000216Z",
+        "created_at": "2026-08-11T00:02:16.719Z",
+        "window_start": "2026-08-10T00:02:16.719Z",
+        "window_end": "2026-08-11T00:02:16.719Z",
+        "lookback_start": "2026-08-08T00:02:16.719Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [
+          {
+            "channel": "Theo / t3.gg",
+            "error": "fetch failed"
+          },
+          {
+            "channel": "ThePrimeTime",
+            "error": "fetch failed"
+          },
+          {
+            "channel": "Fireship",
+            "error": "fetch failed"
+          }
+        ],
+        "new_video_ids": [],
+        "missout_video_ids": [],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      },
+      {
+        "digest_id": "youtube_digest_20260812T000517Z",
+        "created_at": "2026-08-12T00:05:17.045Z",
+        "window_start": "2026-08-11T00:02:16.719Z",
+        "window_end": "2026-08-12T00:05:17.045Z",
+        "lookback_start": "2026-08-09T00:05:17.045Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [
+          {
+            "channel": "Theo / t3.gg",
+            "error": "fetch failed"
+          },
+          {
+            "channel": "ThePrimeTime",
+            "error": "fetch failed"
+          },
+          {
+            "channel": "Fireship",
+            "error": "fetch failed"
+          }
+        ],
+        "new_video_ids": [],
+        "missout_video_ids": [],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      },
+      {
+        "digest_id": "youtube_digest_20260813T000415Z",
+        "created_at": "2026-08-13T00:04:15.961Z",
+        "window_start": "2026-08-12T00:05:17.045Z",
+        "window_end": "2026-08-13T00:04:15.961Z",
+        "lookback_start": "2026-08-10T00:04:15.961Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [
+          {
+            "channel": "Theo / t3.gg",
+            "error": "fetch failed"
+          },
+          {
+            "channel": "ThePrimeTime",
+            "error": "fetch failed"
+          },
+          {
+            "channel": "Fireship",
+            "error": "fetch failed"
+          }
+        ],
+        "new_video_ids": [],
+        "missout_video_ids": [],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      },
+      {
+        "digest_id": "youtube_digest_20260813T105221Z",
+        "created_at": "2026-08-13T10:52:21.250Z",
+        "window_start": "2026-08-13T00:04:15.961Z",
+        "window_end": "2026-08-13T10:52:21.250Z",
+        "lookback_start": "2026-08-10T10:52:21.250Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [],
+        "new_video_ids": [],
+        "missout_video_ids": [
+          "G55HSGpuh1M",
+          "tHsXzjkl1Dc",
+          "P2Jb1lOkzCE",
+          "aB5LGrHISqY",
+          "89_0P8UypsY",
+          "lnMnXsmxoHc",
+          "e1snsuY4lTI",
+          "aEtlWql1N5M"
+        ],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      },
+      {
+        "digest_id": "youtube_digest_20260814T000209Z",
+        "created_at": "2026-08-14T00:02:09.872Z",
+        "window_start": "2026-08-13T10:52:21.250Z",
+        "window_end": "2026-08-14T00:02:09.872Z",
+        "lookback_start": "2026-08-11T00:02:09.872Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [],
+        "new_video_ids": [
+          "-TVL8F-DvlQ",
+          "UyIiAIif5R0",
+          "c7W8jpsjtCc"
+        ],
+        "missout_video_ids": [],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      },
+      {
+        "digest_id": "youtube_digest_20260815T000209Z",
+        "created_at": "2026-08-15T00:02:09.953Z",
+        "window_start": "2026-08-14T00:02:09.872Z",
+        "window_end": "2026-08-15T00:02:09.953Z",
+        "lookback_start": "2026-08-12T00:02:09.953Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [],
+        "new_video_ids": [
+          "iWh6Khkv_Es",
+          "E7la7-dtfVM",
+          "6oBdGwCyt54",
+          "Be-NqsW-wuk"
+        ],
+        "missout_video_ids": [],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      },
+      {
+        "digest_id": "youtube_digest_20260815T181323Z",
+        "created_at": "2026-08-15T18:13:23.862Z",
+        "window_start": "2026-08-15T00:02:09.953Z",
+        "window_end": "2026-08-15T18:13:23.862Z",
+        "lookback_start": "2026-08-12T18:13:23.862Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [],
+        "new_video_ids": [
+          "W4K1kG0Dnk8"
+        ],
+        "missout_video_ids": [],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      },
+      {
+        "digest_id": "youtube_digest_20260816T190209Z",
+        "created_at": "2026-08-16T19:02:09.058Z",
+        "window_start": "2026-08-15T18:13:23.862Z",
+        "window_end": "2026-08-16T19:02:09.058Z",
+        "lookback_start": "2026-08-13T19:02:09.058Z",
+        "mode": "daily_digest_only",
+        "channels_checked": [
+          "theo_t3gg",
+          "theprimetime",
+          "fireship"
+        ],
+        "feed_errors": [],
+        "new_video_ids": [
+          "vp4CuUZfcD8"
+        ],
+        "missout_video_ids": [],
+        "packet_generation": "none",
+        "thumbnail_storage": "none",
+        "delivery": "direct_telegram_cli"
+      }
+    ],
+    "last_digest_sent_at": "2026-08-16T19:02:09.058Z",
+    "last_digest_window_start": "2026-08-15T18:13:23.862Z",
+    "last_digest_window_end": "2026-08-16T19:02:09.058Z",
+    "timezone": "Europe/London"
+  }
+}

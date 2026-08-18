@@ -1,0 +1,10 @@
+Make detailed notes from https://react.dev/learn
+
+Requirements:
+- Beginner-friendly but technically accurate
+- Cover only pages under /learn
+- Maximum 35 source pages
+- Create nested Markdown pages and mkdocs.yml
+- Add diagrams, generalized examples, mistakes, best practices, exercises, FAQ, glossary, and source links
+- Do not copy long passages
+- Save to docs-notes/react-learn

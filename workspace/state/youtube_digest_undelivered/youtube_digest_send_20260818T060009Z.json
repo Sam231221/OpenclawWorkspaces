@@ -1,0 +1,13 @@
+{
+  "run_id": "youtube_digest_send_20260818T060009Z",
+  "created_at": "2026-08-18T06:03:42.939Z",
+  "reason": "Telegram send failed: GatewayTransportError: gateway timeout after 10000ms\nGateway target: ws://127.0.0.1:18789\nSource: local loopback\nConfig: /home/sam/.openclaw/openclaw.json\nBind: loopback",
+  "message_path": "/home/sam/.openclaw/workspace/state/youtube_digest_undelivered/youtube_digest_send_20260818T060009Z.txt",
+  "candidate_state_path": "/home/sam/.openclaw/workspace/state/youtube_digest_undelivered/youtube_digest_send_20260818T060009Z.state.json",
+  "resolved_at": "2026-08-18T16:10:57.993Z",
+  "resolved_by_run_id": "youtube_digest_resend_20260818T161052094Z",
+  "resolved_state_commit": "not_committed_current_state_newer",
+  "resend_message_ids": [
+    "254"
+  ]
+}

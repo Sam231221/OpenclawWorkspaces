@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "youtube-transcript-generator": {
+      "version": "1.0.0",
+      "installedAt": 1784722682097,
+      "registry": "https://clawhub.ai"
+    }
+  }
+}

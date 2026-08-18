@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "source": "local",
+  "spec": "/home/sam/.openclaw/workspace/skills/notion-maton-gateway",
+  "slug": "notion-maton-gateway",
+  "createdFrom": "/home/sam/.openclaw/workspace/skills/api-gateway/references/notion/README.md"
+}

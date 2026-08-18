@@ -1,0 +1,10 @@
+[Unit]
+Description=Run OpenClaw YouTube-to-LinkedIn daily digest at 06:00 UTC
+
+[Timer]
+OnCalendar=*-*-* 06:00:00 UTC
+Persistent=false
+Unit=openclaw-youtube-linkedin-digest.service
+
+[Install]
+WantedBy=timers.target

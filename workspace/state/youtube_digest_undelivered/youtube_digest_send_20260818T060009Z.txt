@@ -1,0 +1,48 @@
+📺 <b>YouTube Daily Watchlist</b>
+📅 <b>Tuesday, 18 August 2026</b> · <i>07:00 Europe/London</i>
+⏰ <i>Daily send: 06:00 Europe/London</i>
+
+<b>Summary</b>
+• 🆕 <b>0</b> <i>new today</i>
+• ⏪ <b>0</b> <i>recently missed</i>
+• 🔖 <b>1</b> <i>saved</i>
+
+<b>Channels</b>
+A. <b>Theo / t3dotgg</b> — <i>0 new · 0 missed</i>
+B. <b>ThePrimeTime</b> — <i>0 new · 0 missed</i>
+C. <b>Fireship</b> — <i>0 new · 0 missed</i>
+
+━━━━━━━━━━━━━━
+
+🆕 <b>NEW VIDEOS</b>
+
+No new videos were published during this scan.
+
+━━━━━━━━━━━━━━
+
+⏪ <b>RECENT VIDEOS YOU MAY HAVE MISSED</b>
+
+You’re all caught up—no recently missed videos.
+
+━━━━━━━━━━━━━━
+
+🔖 <b>SAVED FOR LATER</b>
+
+<b>This new startup can query anywhere you've been...</b> — Fireship
+▶️ <a href="https://www.youtube.com/watch?v=E7la7-dtfVM">Watch video</a>
+
+━━━━━━━━━━━━━━
+
+💬 <b>AVAILABLE COMMANDS</b>
+
+• <code>Save video VIDEO_ID</code>
+• <code>Make LinkedIn draft for VIDEO_ID</code>
+• <code>Status</code>
+
+━━━━━━━━━━━━━━
+
+⚠️ <b>FEED WARNINGS</b>
+
+• <b>Theo / t3.gg</b>: fetch failed
+• <b>ThePrimeTime</b>: fetch failed
+• <b>Fireship</b>: fetch failed

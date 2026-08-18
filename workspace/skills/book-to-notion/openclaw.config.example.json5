@@ -1,0 +1,39 @@
+{
+  // Merge this fragment into ~/.openclaw/openclaw.json.
+  // Keep secrets out of source control.
+
+  tools: {
+    alsoAllow: ["exec", "pdf"],
+  },
+
+  agents: {
+    defaults: {
+      // Choose a PDF-capable model available in your installation.
+      // pdfModel: {
+      //   primary: "provider/model-name",
+      //   fallbacks: ["provider/backup-model"],
+      // },
+
+      // Increase only when your model/context budget can handle it.
+      pdfMaxPages: 20,
+    },
+  },
+
+  skills: {
+    entries: {
+      "book-to-notion": {
+        enabled: true,
+        env: {
+          // Prefer existing Maton OAuth on this server.
+          MATON_API_KEY: "REPLACE_WITH_SECRET_OR_USE_PROCESS_ENV",
+          // Direct Notion fallback:
+          // NOTION_API_KEY: "REPLACE_WITH_SECRET_OR_USE_PROCESS_ENV",
+          // Defaults to Books when omitted.
+          // NOTION_BOOKS_PAGE_TITLE: "Books",
+          // Optional hard override:
+          // NOTION_PARENT_PAGE_ID: "REPLACE_WITH_PARENT_PAGE_UUID",
+        },
+      },
+    },
+  },
+}

@@ -1,0 +1,21 @@
+{
+  "name": "openclaw-workspace-tools",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "youtube:transcript": "node scripts/fetch_youtube_transcript.mjs",
+    "youtube:transcriptapi": "node scripts/fetch_youtube_transcript.mjs",
+    "youtube:digest": "node scripts/youtube_linkedin_daily_digest.mjs",
+    "youtube:digest:send": "node scripts/send_youtube_digest.mjs",
+    "youtube:digest:send:dry-run": "node scripts/send_youtube_digest.mjs --dry-run",
+    "youtube:digest:resend-latest": "node scripts/send_youtube_digest.mjs --resend-latest",
+    "youtube:digest:resend-latest:dry-run": "node scripts/send_youtube_digest.mjs --resend-latest --dry-run",
+    "youtube:digest:health": "node scripts/youtube_digest_health.mjs",
+    "youtube:workflow:repair": "node scripts/repair_youtube_linkedin_workflow.mjs",
+    "youtube:visual": "node scripts/create_youtube_linkedin_visual.mjs",
+    "sessions:cleanup": "node scripts/cleanup_openclaw_sessions.mjs",
+    "sessions:cleanup:apply": "node scripts/cleanup_openclaw_sessions.mjs --apply",
+    "audio:transcribe": "/home/sam/.npm-global/lib/node_modules/openclaw/skills/openai-whisper-api/scripts/transcribe.sh",
+    "audio:transcribe:json": "/home/sam/.npm-global/lib/node_modules/openclaw/skills/openai-whisper-api/scripts/transcribe.sh --json"
+  }
+}

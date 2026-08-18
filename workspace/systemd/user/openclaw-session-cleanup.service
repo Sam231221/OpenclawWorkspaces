@@ -1,0 +1,11 @@
+[Unit]
+Description=OpenClaw archive-first session cleanup
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/sam/.openclaw/workspace
+Environment=PATH=/home/sam/.npm-global/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/bin
+ExecStart=/usr/bin/npm --silent run sessions:cleanup:apply
+TimeoutStartSec=30min
+StandardOutput=journal
+StandardError=journal
