@@ -1,1 +1,2 @@
-This is workspaces backup for openclaw
+This is workspaces backup for openclaw.
+ssh is configured
